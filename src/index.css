@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-800;
+  }
+
+  body {
+    @apply bg-neutral-950 text-neutral-100;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+}
+
+:root {
+  --tremor-background-muted: theme('colors.neutral.900');
+  --tremor-border: theme('colors.neutral.800');
+  --tremor-ring: theme('colors.neutral.800');
+  --tremor-content: theme('colors.neutral.100');
+  --tremor-content-subtle: theme('colors.neutral.400');
+  --tremor-content-emphasis: theme('colors.neutral.50');
+  --tremor-brand: theme('colors.emerald.500');
+  --tremor-brand-emphasis: theme('colors.emerald.600');
+  --tremor-brand-inverted: theme('colors.neutral.950');
+}
+
+.tremor-Metric-root {
+  @apply font-mono;
+}
+
+.tremor-ProgressBar-root {
+  @apply bg-neutral-800;
+}
+
+.tremor-Card-root {
+  @apply shadow-lg shadow-black/50;
+}
+
+.tremor-BarList-bar {
+  @apply bg-neutral-800;
+}
