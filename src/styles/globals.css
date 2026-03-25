@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #1B2A4A;
+  --color-navy-light: #2C3E6B;
+  --color-gold: #C9A96E;
+  --color-gold-light: #D4BC8A;
+  --color-cream: #FAF7F2;
+  --color-stone: #E8E2D8;
+  --color-warm-grey: #6B6560;
+  --color-charcoal: #2D2926;
+  --color-white: #FFFFFF;
+  --color-success: #2D6A4F;
+  --color-error: #9B2C2C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-warm-grey font-sans text-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-charcoal;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold;
+  }
+}
+
+@layer components {
+  .skip-to-content {
+    @apply absolute -top-10 left-4 z-50 bg-navy text-white px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .skip-to-content:focus {
+    @apply top-4;
+  }
+}
