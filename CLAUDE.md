@@ -40,7 +40,7 @@ Row-level security enabled with public read access.
 
 ## Styling
 
-Tailwind CSS 3.4 + Tremor React 3.18 for dashboard components. Lucide React for icons. No other UI frameworks (per project convention from `.bolt/prompt`).
+Tailwind CSS 3.4 + Tremor React 3.18 for dashboard components. Lucide React for icons. Do not install other packages for UI themes, icons, or component libraries unless explicitly requested (per `.bolt/prompt` convention).
 
 ## Docs
 
