@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE_NAME, CONTACT, LOCATIONS } from '@/lib/constants'
 import { Shield, Award, Star, Phone, Mail } from 'lucide-react'
 
@@ -8,8 +9,21 @@ export default function Footer() {
       <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div>
-            <Link href="/" className="font-serif text-white text-xl font-bold">
-              {SITE_NAME}
+            <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn — Home">
+              <Image
+                src="/images/logo-mark.svg"
+                alt=""
+                width={30}
+                height={23}
+                className="h-6 w-auto brightness-0 invert"
+              />
+              <Image
+                src="/images/logo-wordmark.svg"
+                alt="Aidan Flynn"
+                width={140}
+                height={14}
+                className="h-3.5 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-small text-white/60">
               Transparent precious metals buying across the UK and Ireland. Published pricing, free insured postage, same-day payment.
