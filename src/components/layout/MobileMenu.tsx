@@ -46,7 +46,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="fixed inset-0 top-16 md:top-20 z-50 bg-white"
+            className="fixed inset-x-0 top-16 md:top-20 bottom-0 z-50 bg-white overflow-y-auto shadow-lg border-t border-stone"
           >
             <div className="flex flex-col p-6 gap-2">
               {NAV_ITEMS.map((item, i) => (
@@ -59,7 +59,7 @@ export default function MobileMenu() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'py-3 px-4 rounded-lg text-lg font-sans font-medium transition-colors',
+                      'block py-3 px-4 rounded-lg text-lg font-sans font-medium transition-colors',
                       pathname === item.href
                         ? 'text-navy bg-cream'
                         : 'text-warm-grey hover:text-navy hover:bg-cream'
