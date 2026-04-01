@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import TrustBar from '@/components/TrustBar'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
+import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection'
 import { Shield, Award, Star, Eye, RotateCcw } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -19,11 +20,13 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-cream py-16 md:py-24">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-2xl">
-            <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6">
-              My name is on this business
-            </h1>
-          </div>
+          <AnimatedSection direction="none">
+            <div className="max-w-2xl">
+              <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6">
+                My name is on this business
+              </h1>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -44,7 +47,7 @@ export default function AboutPage() {
                 I started this business because the precious metals buying sector has a trust problem, and I wanted to build something different.
               </p>
               <p>
-                For years, selling gold has meant walking into a shop with no idea whether you are getting a fair price. The industry has relied on information asymmetry — the buyer knows what your gold is worth, and you don&rsquo;t. That imbalance has allowed too many businesses to pay people far less than they should.
+                For years, selling gold has meant walking into a shop with no idea whether you are getting a fair price. The industry has relied on information asymmetry \u2014 the buyer knows what your gold is worth, and you don&rsquo;t. That imbalance has allowed too many businesses to pay people far less than they should.
               </p>
               <p>
                 I believe you deserve to know exactly what your gold is worth and exactly how I calculate my offer. That is why we publish our rates online, updated throughout the day. No hidden margins. No vague &ldquo;we&rsquo;ll give you the best price&rdquo; promises. Just transparent numbers.
@@ -56,7 +59,7 @@ export default function AboutPage() {
                 We operate from Brighton, Belfast, and soon Dublin. Whether you visit us in person or use our postal service, the experience is the same: fair prices, transparent process, and genuine care for the items you are entrusting to us.
               </p>
               <p className="text-charcoal font-medium">
-                — Aidan Flynn
+                \u2014 Aidan Flynn
               </p>
             </div>
           </div>
@@ -69,36 +72,44 @@ export default function AboutPage() {
           <h2 id="different" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">
             How we are different
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <Card>
-              <Shield size={24} className="text-navy mb-3" />
-              <h3 className="font-serif text-lg text-charcoal mb-2">HMRC registered</h3>
-              <p className="text-small text-warm-grey">
-                Registered with HMRC for anti-money laundering supervision. Fully compliant with the Money Laundering Regulations.
-              </p>
-            </Card>
-            <Card>
-              <Award size={24} className="text-navy mb-3" />
-              <h3 className="font-serif text-lg text-charcoal mb-2">Trading Standards accredited</h3>
-              <p className="text-small text-warm-grey">
-                Buy With Confidence accredited by Trading Standards. Independently vetted and approved.
-              </p>
-            </Card>
-            <Card>
-              <Eye size={24} className="text-navy mb-3" />
-              <h3 className="font-serif text-lg text-charcoal mb-2">Published pricing</h3>
-              <p className="text-small text-warm-grey">
-                Our rates are published online and updated throughout the day. No hidden fees, no surprises, no &ldquo;we&rsquo;ll call you back with a price.&rdquo;
-              </p>
-            </Card>
-            <Card>
-              <RotateCcw size={24} className="text-navy mb-3" />
-              <h3 className="font-serif text-lg text-charcoal mb-2">Free insured returns</h3>
-              <p className="text-small text-warm-grey">
-                If you do not accept our offer, we return everything at our expense. Fully insured. No questions asked.
-              </p>
-            </Card>
-          </div>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <StaggerItem>
+              <Card>
+                <Shield size={24} className="text-navy mb-3" />
+                <h3 className="font-serif text-lg text-charcoal mb-2">HMRC registered</h3>
+                <p className="text-small text-warm-grey">
+                  Registered with HMRC for anti-money laundering supervision. Fully compliant with the Money Laundering Regulations.
+                </p>
+              </Card>
+            </StaggerItem>
+            <StaggerItem>
+              <Card>
+                <Award size={24} className="text-navy mb-3" />
+                <h3 className="font-serif text-lg text-charcoal mb-2">Trading Standards accredited</h3>
+                <p className="text-small text-warm-grey">
+                  Buy With Confidence accredited by Trading Standards. Independently vetted and approved.
+                </p>
+              </Card>
+            </StaggerItem>
+            <StaggerItem>
+              <Card>
+                <Eye size={24} className="text-navy mb-3" />
+                <h3 className="font-serif text-lg text-charcoal mb-2">Published pricing</h3>
+                <p className="text-small text-warm-grey">
+                  Our rates are published online and updated throughout the day. No hidden fees, no surprises, no &ldquo;we&rsquo;ll call you back with a price.&rdquo;
+                </p>
+              </Card>
+            </StaggerItem>
+            <StaggerItem>
+              <Card>
+                <RotateCcw size={24} className="text-navy mb-3" />
+                <h3 className="font-serif text-lg text-charcoal mb-2">Free insured returns</h3>
+                <p className="text-small text-warm-grey">
+                  If you do not accept our offer, we return everything at our expense. Fully insured. No questions asked.
+                </p>
+              </Card>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
