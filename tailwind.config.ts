@@ -53,6 +53,23 @@ const config: Config = {
       boxShadow: {
         'card': '0 1px 3px rgba(0,0,0,0.04)',
       },
+      keyframes: {
+        onloadopacity: {
+          '24%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        onloadbgt: {
+          '0%': { translate: '0 -70%', opacity: '0.3' },
+          '100%': { translate: '0 -64%', opacity: '0.8' },
+        },
+        onloadbgb: {
+          '0%': { translate: '0 70%', opacity: '0.3' },
+          '100%': { translate: '0 64%', opacity: '0.8' },
+        },
+      },
+      animation: {
+        'glow-in': 'onloadopacity 1s ease-out forwards',
+      },
     },
   },
   plugins: [],
