@@ -8,6 +8,7 @@ import TestimonialCard from '@/components/TestimonialCard'
 import LocationCard from '@/components/LocationCard'
 import PriceTable from '@/components/PriceTable'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection'
+import AnimatedHeadline from '@/components/AnimatedHeadline'
 import { TESTIMONIALS, LOCATIONS } from '@/lib/constants'
 import { Eye, Heart, User } from 'lucide-react'
 
@@ -30,8 +31,8 @@ export default function HomePage() {
           <AnimatedSection direction="none">
             <div className="max-w-3xl">
               <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6 leading-tight">
-                Your gold is worth more than you think.{' '}
-                <span className="text-navy">We&rsquo;ll show you exactly how much.</span>
+                Your gold is worth more than you think.
+                <AnimatedHeadline />
               </h1>
               <p className="text-body md:text-subheading text-warm-grey mb-10 max-w-2xl">
                 Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.
