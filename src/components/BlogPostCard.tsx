@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import Card from '@/components/ui/Card'
 import { formatDate } from '@/lib/utils'
 
@@ -16,12 +14,9 @@ export default function BlogPostCard({ title, slug, date, excerpt }: BlogPostCar
       <p className="text-caption text-warm-grey mb-2">{formatDate(date)}</p>
       <h3 className="font-serif text-lg text-charcoal mb-3">{title}</h3>
       <p className="text-small text-warm-grey mb-6 flex-grow">{excerpt}</p>
-      <Link
-        href={`/blog/${slug}`}
-        className="inline-flex items-center gap-2 text-small font-medium text-navy hover:text-navy-light transition-colors"
-      >
-        Read more <ArrowRight size={14} />
-      </Link>
+      <span className="inline-flex items-center gap-2 text-small font-medium text-warm-grey">
+        Coming soon
+      </span>
     </Card>
   )
 }
