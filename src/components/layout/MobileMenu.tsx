@@ -46,7 +46,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="fixed inset-x-0 top-16 md:top-20 bottom-0 z-50 bg-white overflow-y-auto shadow-lg border-t border-stone"
+            className="fixed inset-x-0 top-16 md:top-20 bottom-0 z-[60] bg-white overflow-y-auto shadow-lg border-t border-stone"
           >
             <div className="flex flex-col p-6 gap-2">
               {NAV_ITEMS.map((item, i) => (
