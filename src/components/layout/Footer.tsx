@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div>
-            <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn — Home">
+            <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn \u2014 Home">
               <Image
                 src="/images/logo-mark.svg"
                 alt=""
