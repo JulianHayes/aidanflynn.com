@@ -1,14 +1,12 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { X, Phone, Mail } from 'lucide-react'
 import { NAV_ITEMS, CONTACT } from '@/lib/constants'
 import Button from '@/components/ui/Button'
-
-const menuSlideTransition = { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }
 
 function NavLink({
   label,
@@ -100,73 +98,78 @@ export default function SiteMenu() {
         </div>
       </button>
 
-      {/* Full-screen menu overlay */}
-      <AnimatePresence mode="wait">
-        {isOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: '0%', transition: menuSlideTransition }}
-            exit={{ x: '100%', transition: menuSlideTransition }}
-            className="fixed inset-0"
-            style={{ zIndex: 9999, backgroundColor: '#FFFFFF' }}
-          >
-            {/* Close button */}
-            <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-              <div className="flex items-center justify-end h-16 md:h-20">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center text-navy hover:text-navy-light transition-colors"
-                  aria-label="Close menu"
-                >
-                  <X size={24} />
-                </button>
-              </div>
+      {/* Full-screen menu overlay — plain div, all critical styles inline */}
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#FFFFFF',
+            zIndex: 9999,
+            overflowY: 'auto',
+          }}
+        >
+          {/* Close button */}
+          <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+            <div className="flex items-center justify-end h-16 md:h-20">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-10 h-10 flex items-center justify-center text-navy hover:text-navy-light transition-colors"
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
+          </div>
+
+          {/* Menu content */}
+          <div style={{ height: 'calc(100vh - 5rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            {/* Nav items */}
+            <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20">
+              {NAV_ITEMS.map((item, index) => (
+                <NavLink
+                  key={item.href}
+                  label={item.label}
+                  href={item.href}
+                  index={index + 1}
+                  onClose={() => setIsOpen(false)}
+                  isActive={pathname === item.href}
+                />
+              ))}
             </div>
 
-            {/* Menu content */}
-            <div className="h-[calc(100dvh-5rem)] flex flex-col justify-between">
-              {/* Nav items */}
-              <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20">
-                {NAV_ITEMS.map((item, index) => (
-                  <NavLink
-                    key={item.href}
-                    label={item.label}
-                    href={item.href}
-                    index={index + 1}
-                    onClose={() => setIsOpen(false)}
-                    isActive={pathname === item.href}
-                  />
-                ))}
-              </div>
-
-              {/* Footer section */}
-              <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20 pb-8">
-                <div className="border-t border-charcoal/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
-                    <a
-                      href={`tel:${CONTACT.phone}`}
-                      className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
-                    >
-                      <Phone size={16} className="text-navy" />
-                      {CONTACT.phoneDisplay}
-                    </a>
-                    <a
-                      href={`mailto:${CONTACT.email}`}
-                      className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
-                    >
-                      <Mail size={16} className="text-navy" />
-                      {CONTACT.email}
-                    </a>
-                  </div>
-                  <Button href="/contact" variant="gold" size="sm">
-                    Get Your Free Kit
-                  </Button>
+            {/* Footer section */}
+            <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20 pb-8">
+              <div className="border-t border-charcoal/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                  <a
+                    href={`tel:${CONTACT.phone}`}
+                    className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
+                  >
+                    <Phone size={16} className="text-navy" />
+                    {CONTACT.phoneDisplay}
+                  </a>
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
+                  >
+                    <Mail size={16} className="text-navy" />
+                    {CONTACT.email}
+                  </a>
                 </div>
+                <Button href="/contact" variant="gold" size="sm">
+                  Get Your Free Kit
+                </Button>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </>
   )
 }
