@@ -7,7 +7,7 @@ export default function AnimatedHeadline() {
     <motion.span
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.7, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] }}
       className="block text-navy mt-2"
     >
       Aidan Flynn will show you exactly how much.
