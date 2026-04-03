@@ -107,8 +107,8 @@ export default function SiteMenu() {
             initial={{ x: '100%' }}
             animate={{ x: '0%', transition: menuSlideTransition }}
             exit={{ x: '100%', transition: menuSlideTransition }}
-            className="fixed inset-0 bg-white"
-            style={{ zIndex: 9999 }}
+            className="fixed inset-0"
+            style={{ zIndex: 9999, backgroundColor: '#FFFFFF' }}
           >
             {/* Close button */}
             <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
