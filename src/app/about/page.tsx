@@ -3,7 +3,7 @@ import TrustBar from '@/components/TrustBar'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/ui/AnimatedSection'
-import { Shield, Award, Star, Eye, RotateCcw } from 'lucide-react'
+import { Shield, Award, Eye, RotateCcw } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About',

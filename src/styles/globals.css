@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --color-navy: #1B2A4A;
-  --color-navy-light: #2C3E6B;
+  --color-navy: #1B474A;
+  --color-navy-light: #2C6366;
   --color-gold: #C9A96E;
   --color-gold-light: #D4BC8A;
   --color-cream: #FAF7F2;
@@ -41,5 +41,37 @@
 
   .skip-to-content:focus {
     @apply top-4;
+  }
+}
+
+/* Illuminated text glow animations */
+@keyframes onloadopacity {
+  24% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes onloadbgt {
+  0% {
+    translate: 0 -70%;
+    opacity: 0.3;
+  }
+  100% {
+    translate: 0 -64%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes onloadbgb {
+  0% {
+    translate: 0 70%;
+    opacity: 0.3;
+  }
+  100% {
+    translate: 0 64%;
+    opacity: 0.8;
   }
 }
