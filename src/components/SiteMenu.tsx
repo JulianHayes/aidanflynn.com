@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Phone, Mail } from 'lucide-react'
+import { X, Phone, Mail } from 'lucide-react'
 import { NAV_ITEMS, CONTACT } from '@/lib/constants'
 import Button from '@/components/ui/Button'
 
@@ -30,10 +30,10 @@ function NavLink({
       onClick={onClose}
       initial="initial"
       whileHover="whileHover"
-      className="group relative flex items-center border-b border-charcoal/10 py-5 md:py-7"
+      className="group relative flex items-center border-b border-charcoal/10 py-4 md:py-5"
     >
       <Link ref={ref} href={href} className="flex items-start w-full">
-        <span className="text-gold/60 text-2xl md:text-3xl font-thin mr-3 font-sans">
+        <span className="text-gold/60 text-xl md:text-2xl font-thin mr-3 font-sans">
           {index}.
         </span>
         <div className="flex flex-col">
@@ -47,7 +47,7 @@ function NavLink({
               staggerChildren: 0.075,
               delayChildren: 0.25,
             }}
-            className="relative z-10 block text-2xl md:text-3xl font-serif text-charcoal transition-colors duration-300 group-hover:text-navy"
+            className="relative z-10 block text-xl md:text-2xl font-serif text-charcoal transition-colors duration-300 group-hover:text-navy"
           >
             {label.split('').map((letter, i) => (
               <motion.span
@@ -72,35 +72,6 @@ function NavLink({
   )
 }
 
-function Curve() {
-  const [height, setHeight] = useState(0)
-
-  useEffect(() => {
-    setHeight(window.innerHeight)
-    const handleResize = () => setHeight(window.innerHeight)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  if (!height) return null
-
-  const initialPath = `M100 0 L200 0 L200 ${height} L100 ${height} Q-100 ${height / 2} 100 0`
-  const targetPath = `M100 0 L200 0 L200 ${height} L100 ${height} Q100 ${height / 2} 100 0`
-
-  return (
-    <svg
-      className="absolute top-0 -left-[99px] w-[100px] h-full stroke-none hidden md:block"
-      style={{ fill: '#FAF7F2' }}
-    >
-      <motion.path
-        initial={{ d: initialPath }}
-        animate={{ d: targetPath, transition: { duration: 1, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] } }}
-        exit={{ d: initialPath, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] } }}
-      />
-    </svg>
-  )
-}
-
 export default function SiteMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -118,61 +89,44 @@ export default function SiteMenu() {
     <>
       {/* Hamburger button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(true)}
         className="relative z-50 w-10 h-10 flex items-center justify-center"
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={isOpen}
+        aria-label="Open menu"
       >
         <div className="relative w-7 h-5 flex flex-col justify-between">
-          <span
-            className={`block h-0.5 w-7 bg-navy transition-all duration-300 origin-center ${
-              isOpen ? 'rotate-45 translate-y-[9px]' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-7 bg-navy transition-opacity duration-300 ${
-              isOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-7 bg-navy transition-all duration-300 origin-center ${
-              isOpen ? '-rotate-45 -translate-y-[9px]' : ''
-            }`}
-          />
+          <span className="block h-0.5 w-7 bg-navy" />
+          <span className="block h-0.5 w-7 bg-navy" />
+          <span className="block h-0.5 w-7 bg-navy" />
         </div>
       </button>
 
-      {/* Overlay backdrop */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 bg-charcoal/30 backdrop-blur-sm"
-            style={{ zIndex: 9990 }}
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Slide-in panel */}
+      {/* Full-screen menu overlay */}
       <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
-            initial={{ x: 'calc(100% + 100px)' }}
-            animate={{ x: '0', transition: menuSlideTransition }}
-            exit={{ x: 'calc(100% + 100px)', transition: menuSlideTransition }}
-            className="fixed right-0 top-0 h-[100dvh] w-screen max-w-md bg-cream"
-            style={{ zIndex: 9995 }}
+            initial={{ x: '100%' }}
+            animate={{ x: '0%', transition: menuSlideTransition }}
+            exit={{ x: '100%', transition: menuSlideTransition }}
+            className="fixed inset-0 bg-cream"
+            style={{ zIndex: 9999 }}
           >
-            <div className="h-full flex flex-col justify-between pt-20 pb-8">
+            {/* Close button \u2014 positioned exactly where the hamburger sits */}
+            <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+              <div className="flex items-center justify-end h-16 md:h-20">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center text-navy hover:text-navy-light transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+
+            {/* Menu content */}
+            <div className="h-[calc(100dvh-5rem)] flex flex-col justify-between">
               {/* Nav items */}
-              <div className="px-8 md:px-12">
-                <p className="text-caption uppercase tracking-wider text-warm-grey border-b border-charcoal/10 pb-3 mb-2 font-sans">
-                  Navigation
-                </p>
+              <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20">
                 {NAV_ITEMS.map((item, index) => (
                   <NavLink
                     key={item.href}
@@ -186,30 +140,30 @@ export default function SiteMenu() {
               </div>
 
               {/* Footer section */}
-              <div className="px-8 md:px-12 space-y-4">
-                <div className="border-t border-charcoal/10 pt-6 space-y-3">
-                  <a
-                    href={`tel:${CONTACT.phone}`}
-                    className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
-                  >
-                    <Phone size={16} className="text-navy" />
-                    {CONTACT.phoneDisplay}
-                  </a>
-                  <a
-                    href={`mailto:${CONTACT.email}`}
-                    className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
-                  >
-                    <Mail size={16} className="text-navy" />
-                    {CONTACT.email}
-                  </a>
+              <div className="max-w-content mx-auto w-full px-8 md:px-16 lg:px-20 pb-8">
+                <div className="border-t border-charcoal/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                    <a
+                      href={`tel:${CONTACT.phone}`}
+                      className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
+                    >
+                      <Phone size={16} className="text-navy" />
+                      {CONTACT.phoneDisplay}
+                    </a>
+                    <a
+                      href={`mailto:${CONTACT.email}`}
+                      className="flex items-center gap-3 text-small text-warm-grey hover:text-navy transition-colors"
+                    >
+                      <Mail size={16} className="text-navy" />
+                      {CONTACT.email}
+                    </a>
+                  </div>
+                  <Button href="/contact" variant="gold" size="sm">
+                    Get Your Free Kit
+                  </Button>
                 </div>
-                <Button href="/contact" variant="gold" size="md" className="w-full">
-                  Get Your Free Kit
-                </Button>
               </div>
             </div>
-
-            <Curve />
           </motion.div>
         )}
       </AnimatePresence>
