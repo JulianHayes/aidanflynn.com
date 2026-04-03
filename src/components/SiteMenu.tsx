@@ -107,10 +107,10 @@ export default function SiteMenu() {
             initial={{ x: '100%' }}
             animate={{ x: '0%', transition: menuSlideTransition }}
             exit={{ x: '100%', transition: menuSlideTransition }}
-            className="fixed inset-0 bg-cream"
+            className="fixed inset-0 bg-white"
             style={{ zIndex: 9999 }}
           >
-            {/* Close button \u2014 positioned exactly where the hamburger sits */}
+            {/* Close button */}
             <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
               <div className="flex items-center justify-end h-16 md:h-20">
                 <button
