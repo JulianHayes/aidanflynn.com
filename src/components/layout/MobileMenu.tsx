@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
@@ -10,7 +11,12 @@ import Button from '@/components/ui/Button'
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     setIsOpen(false)
@@ -38,10 +44,9 @@ export default function MobileMenu() {
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {isOpen && (
+      {isOpen && mounted && createPortal(
         <div
-          className="fixed left-0 right-0 bottom-0 bg-white overflow-y-auto shadow-lg border-t border-stone"
-          style={{ top: '4rem', zIndex: 9999 }}
+          className="fixed top-16 md:top-20 left-0 right-0 bottom-0 bg-white overflow-y-auto shadow-lg border-t border-stone lg:hidden z-[9999]"
         >
           <div className="flex flex-col p-6 gap-1">
             {NAV_ITEMS.map((item) => (
@@ -75,7 +80,8 @@ export default function MobileMenu() {
               </Button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
