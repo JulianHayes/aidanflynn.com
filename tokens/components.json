@@ -1,0 +1,65 @@
+{
+  "comp": {
+    "page": {
+      "bg": "{sys.color.bg.base}",
+      "text": "{sys.color.text.primary}"
+    },
+    "card": {
+      "bg": "{sys.color.surface.elevated}",
+      "border": "{sys.color.border.subtle}",
+      "text": "{sys.color.text.primary}",
+      "radius": "{ref.radius.lg}",
+      "padding": "{ref.space.24}"
+    },
+    "hero": {
+      "bg": "{sys.color.bg.base}",
+      "heading": "{sys.color.text.primary}",
+      "body": "{sys.color.text.secondary}"
+    },
+    "button": {
+      "primary": {
+        "bg": "{sys.color.action.primaryBg}",
+        "text": "{sys.color.action.primaryText}",
+        "hover": "{sys.color.action.primaryHover}",
+        "focus": "{sys.color.focus.ring}",
+        "radius": "{ref.radius.md}",
+        "paddingX": "{ref.space.20}",
+        "paddingY": "{ref.space.12}"
+      },
+      "secondary": {
+        "bg": "{sys.color.action.secondaryBg}",
+        "text": "{sys.color.action.secondaryText}",
+        "border": "{sys.color.border.subtle}",
+        "radius": "{ref.radius.md}",
+        "paddingX": "{ref.space.20}",
+        "paddingY": "{ref.space.12}"
+      }
+    },
+    "valuation": {
+      "bg": "{sys.color.value.surface}",
+      "number": "{sys.color.value.text}",
+      "accent": "{sys.color.value.accent}",
+      "label": "{sys.color.text.secondary}",
+      "radius": "{ref.radius.lg}",
+      "padding": "{ref.space.24}"
+    },
+    "input": {
+      "bg": "{sys.color.surface.base}",
+      "text": "{sys.color.text.primary}",
+      "placeholder": "{sys.color.text.muted}",
+      "border": "{sys.color.border.default}",
+      "focus": "{sys.color.focus.ring}",
+      "radius": "{ref.radius.md}",
+      "paddingX": "{ref.space.16}",
+      "paddingY": "{ref.space.12}"
+    },
+    "nav": {
+      "bg": "{sys.color.bg.base}",
+      "text": "{sys.color.text.secondary}",
+      "textActive": "{sys.color.text.primary}"
+    },
+    "divider": {
+      "default": "{sys.color.border.subtle}"
+    }
+  }
+}

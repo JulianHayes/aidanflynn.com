@@ -1,0 +1,41 @@
+{
+  "theme": {
+    "light": {
+      "sys.color.bg.base": "{ref.color.neutral.50}",
+      "sys.color.bg.subtle": "{ref.color.neutral.0}",
+      "sys.color.bg.elevated": "{ref.color.neutral.100}",
+
+      "sys.color.surface.base": "{ref.color.neutral.0}",
+      "sys.color.surface.subtle": "{ref.color.neutral.100}",
+      "sys.color.surface.elevated": "{ref.color.neutral.0}",
+
+      "sys.color.text.primary": "{ref.color.text.dark-primary}",
+      "sys.color.text.secondary": "{ref.color.text.dark-secondary}",
+      "sys.color.text.muted": "{ref.color.text.dark-muted}",
+      "sys.color.text.inverse": "{ref.color.neutral.0}",
+
+      "sys.color.border.subtle": "rgba(14, 26, 20, 0.06)",
+      "sys.color.border.default": "rgba(14, 26, 20, 0.10)",
+
+      "sys.color.brand.primary": "{ref.color.green.700}",
+      "sys.color.brand.secondary": "{ref.color.green.600}",
+      "sys.color.brand.accent": "{ref.color.green.350}",
+
+      "sys.color.action.primaryBg": "{ref.color.green.700}",
+      "sys.color.action.primaryText": "{ref.color.neutral.0}",
+      "sys.color.action.primaryHover": "{ref.color.green.600}",
+      "sys.color.action.secondaryBg": "{ref.color.neutral.200}",
+      "sys.color.action.secondaryText": "{ref.color.text.dark-primary}",
+
+      "sys.color.value.surface": "rgba(201, 194, 179, 0.20)",
+      "sys.color.value.text": "{ref.color.text.dark-primary}",
+      "sys.color.value.accent": "{ref.color.neutral.400}",
+
+      "sys.color.state.success": "{ref.color.state.success}",
+      "sys.color.state.warning": "{ref.color.state.warning}",
+      "sys.color.state.error": "{ref.color.state.error}",
+
+      "sys.color.focus.ring": "rgba(74, 199, 145, 0.35)"
+    }
+  }
+}
