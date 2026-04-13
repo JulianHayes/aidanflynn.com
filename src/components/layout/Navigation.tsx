@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Phone } from 'lucide-react'
 import { NAV_ITEMS, CONTACT } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import Button from '@/components/ui/Button'
+import ThemeToggle from '@/components/ui/ThemeToggle'
 import MobileMenu from './MobileMenu'
 
 export default function Navigation() {
@@ -84,12 +85,16 @@ export default function Navigation() {
               <Phone size={16} />
               {CONTACT.phoneDisplay}
             </a>
+            <ThemeToggle />
             <Button href="/contact" variant="gold" size="sm">
               Get Your Free Kit
             </Button>
           </div>
 
-          <MobileMenu />
+          <div className="flex items-center gap-3 lg:hidden">
+            <ThemeToggle />
+            <MobileMenu />
+          </div>
         </div>
       </nav>
     </motion.header>
