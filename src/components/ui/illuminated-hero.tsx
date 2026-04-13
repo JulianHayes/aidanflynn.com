@@ -16,7 +16,7 @@ export function IlluminatedHero() {
           className={cn(
             'relative inline-block',
             'before:absolute before:animate-[onloadopacity_1s_ease-out_forwards] before:opacity-0 before:content-[attr(data-text)]',
-            'before:bg-[linear-gradient(0deg,#dfe5ee_0%,#fffaf6_50%)] before:bg-clip-text before:text-[#fffaf6]',
+            'before:bg-[linear-gradient(0deg,theme(colors.glow.gradient.from)_0%,theme(colors.glow.gradient.to)_50%)] before:bg-clip-text before:text-glow-gradient-to',
             'filter-[url(#glow-4)]',
           )}
           data-text="Illuminated Glow Text."
@@ -28,9 +28,9 @@ export function IlluminatedHero() {
         <br />
       </div>
 
-      <p className="absolute top-0 bottom-0 m-auto h-fit max-w-[28em] translate-y-[12em] bg-gradient-to-t from-[#86868b] to-[#bdc2c9] bg-clip-text text-center font-semibold text-transparent">
+      <p className="absolute top-0 bottom-0 m-auto h-fit max-w-[28em] translate-y-[12em] bg-gradient-to-t from-glow-subtitle-from to-glow-subtitle-to bg-clip-text text-center font-semibold text-transparent">
         Experience a new way to draw attention to key elements with stunning{' '}
-        <span className="relative inline-block font-black text-[#e7dfd6]">
+        <span className="relative inline-block font-black text-glow-text">
           illuminated text.
         </span>{' '}
         Perfect for making a bold statement, this dynamic design ensures your

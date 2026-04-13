@@ -171,13 +171,15 @@ export default function ContactPage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange('message')}
-                        className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors duration-200 resize-y min-h-[120px]"
+                        className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 resize-y min-h-[120px]"
                         rows={5}
                         placeholder="How can we help?"
                         required
+                        aria-invalid={errors.message ? 'true' : undefined}
+                        aria-describedby={errors.message ? 'message-error' : undefined}
                       />
                       {errors.message && (
-                        <p className="text-small text-error" role="alert">{errors.message}</p>
+                        <p id="message-error" className="text-small text-error" role="alert">{errors.message}</p>
                       )}
                     </div>
                     <Button type="submit" variant="gold" disabled={submitting} className="w-full">

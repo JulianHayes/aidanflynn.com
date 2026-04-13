@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: ['selector', '[data-theme="dark"]'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +23,13 @@ const config: Config = {
         stone: '#E8E2D8',
         'warm-grey': '#6B6560',
         charcoal: '#2D2926',
+
+        // --- Illuminated hero effect ---
+        glow: {
+          gradient: { from: '#dfe5ee', to: '#fffaf6' },
+          text: '#e7dfd6',
+          subtitle: { from: '#86868b', to: '#bdc2c9' },
+        },
 
         // --- Reference scales ---
         green: {
