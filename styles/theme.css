@@ -1,0 +1,89 @@
+:root[data-theme="light"] {
+  --color-bg-base: #F5F4F1;
+  --color-bg-subtle: #FFFFFF;
+  --color-bg-elevated: #EEF2EF;
+
+  --color-surface-base: #FFFFFF;
+  --color-surface-subtle: #EEF2EF;
+  --color-surface-elevated: #FFFFFF;
+
+  --color-text-primary: #0E1A14;
+  --color-text-secondary: #5F766C;
+  --color-text-muted: #8A9A92;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border-subtle: rgba(14, 26, 20, 0.06);
+  --color-border-default: rgba(14, 26, 20, 0.10);
+
+  --color-brand-primary: #1F5C45;
+  --color-brand-secondary: #2E7A5B;
+  --color-brand-accent: #4AC791;
+
+  --color-action-primary-bg: #1F5C45;
+  --color-action-primary-text: #FFFFFF;
+  --color-action-primary-hover: #2E7A5B;
+  --color-action-secondary-bg: #E7E2D8;
+  --color-action-secondary-text: #0E1A14;
+
+  --color-value-surface: rgba(201, 194, 179, 0.20);
+  --color-value-text: #0E1A14;
+  --color-value-accent: #C9C2B3;
+
+  --color-state-success: #3FBF8A;
+  --color-state-warning: #C2A65A;
+  --color-state-error: #D96B6B;
+
+  --color-focus-ring: rgba(74, 199, 145, 0.35);
+}
+
+:root[data-theme="dark"] {
+  --color-bg-base: #071912;
+  --color-bg-subtle: #0F241C;
+  --color-bg-elevated: #17372E;
+
+  --color-surface-base: #0F241C;
+  --color-surface-subtle: #17372E;
+  --color-surface-elevated: #17372E;
+
+  --color-text-primary: #E6EBE8;
+  --color-text-secondary: #A8B3AD;
+  --color-text-muted: #7E8A84;
+  --color-text-inverse: #0E1A14;
+
+  --color-border-subtle: rgba(168, 173, 166, 0.08);
+  --color-border-default: rgba(168, 173, 166, 0.14);
+
+  --color-brand-primary: #2F6B53;
+  --color-brand-secondary: #2F7455;
+  --color-brand-accent: #3FBF8A;
+
+  --color-action-primary-bg: #2F6B53;
+  --color-action-primary-text: #E6EBE8;
+  --color-action-primary-hover: #2F7455;
+  --color-action-secondary-bg: rgba(168, 173, 166, 0.10);
+  --color-action-secondary-text: #E6EBE8;
+
+  --color-value-surface: rgba(168, 173, 166, 0.12);
+  --color-value-text: #E6EBE8;
+  --color-value-accent: #8F968E;
+
+  --color-state-success: #3FBF8A;
+  --color-state-warning: #C2A65A;
+  --color-state-error: #D96B6B;
+
+  --color-focus-ring: rgba(63, 191, 138, 0.35);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

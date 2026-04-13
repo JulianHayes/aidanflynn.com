@@ -1,0 +1,78 @@
+{
+  "ref": {
+    "color": {
+      "green": {
+        "950": "#071912",
+        "900": "#0F241C",
+        "800": "#17372E",
+        "700": "#1F5C45",
+        "600": "#2E7A5B",
+        "550": "#2F6B53",
+        "500": "#2F7455",
+        "400": "#3FBF8A",
+        "350": "#4AC791"
+      },
+      "neutral": {
+        "0": "#FFFFFF",
+        "50": "#F5F4F1",
+        "100": "#EEF2EF",
+        "200": "#E7E2D8",
+        "400": "#C9C2B3",
+        "500": "#A8ADA6",
+        "600": "#9F9684",
+        "650": "#8F968E",
+        "700": "#8A9A92",
+        "750": "#7E8A84",
+        "800": "#6F766F"
+      },
+      "text": {
+        "light-primary": "#E6EBE8",
+        "light-secondary": "#A8B3AD",
+        "light-muted": "#7E8A84",
+        "dark-primary": "#0E1A14",
+        "dark-secondary": "#5F766C",
+        "dark-muted": "#8A9A92"
+      },
+      "state": {
+        "success": "#3FBF8A",
+        "warning": "#C2A65A",
+        "error": "#D96B6B"
+      }
+    },
+    "font": {
+      "serif": "\"Libre Baskerville\", Georgia, serif",
+      "sans": "\"Inter\", \"Source Sans 3\", system-ui, sans-serif"
+    },
+    "space": {
+      "2": "0.125rem",
+      "4": "0.25rem",
+      "8": "0.5rem",
+      "12": "0.75rem",
+      "16": "1rem",
+      "20": "1.25rem",
+      "24": "1.5rem",
+      "32": "2rem",
+      "40": "2.5rem",
+      "48": "3rem",
+      "64": "4rem",
+      "80": "5rem",
+      "96": "6rem"
+    },
+    "radius": {
+      "sm": "0.5rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.5rem"
+    },
+    "motion": {
+      "duration": {
+        "fast": "150ms",
+        "base": "200ms",
+        "slow": "280ms"
+      },
+      "easing": {
+        "standard": "cubic-bezier(0.2, 0, 0, 1)"
+      }
+    }
+  }
+}

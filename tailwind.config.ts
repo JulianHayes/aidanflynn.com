@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // --- Legacy palette (retained for backward compat) ---
         navy: {
           DEFAULT: '#1B474A',
           light: '#2C6366',
@@ -21,12 +22,81 @@ const config: Config = {
         stone: '#E8E2D8',
         'warm-grey': '#6B6560',
         charcoal: '#2D2926',
-        success: '#2D6A4F',
-        error: '#9B2C2C',
+
+        // --- Reference scales ---
+        green: {
+          350: '#4AC791',
+          400: '#3FBF8A',
+          500: '#2F7455',
+          550: '#2F6B53',
+          600: '#2E7A5B',
+          700: '#1F5C45',
+          800: '#17372E',
+          900: '#0F241C',
+          950: '#071912',
+        },
+        neutral: {
+          0: '#FFFFFF',
+          50: '#F5F4F1',
+          100: '#EEF2EF',
+          200: '#E7E2D8',
+          400: '#C9C2B3',
+          500: '#A8ADA6',
+          600: '#9F9684',
+          650: '#8F968E',
+          700: '#8A9A92',
+          750: '#7E8A84',
+          800: '#6F766F',
+        },
+
+        // --- System semantic tokens (theme-aware via CSS vars) ---
+        background: {
+          DEFAULT: 'var(--color-bg-base)',
+          subtle: 'var(--color-bg-subtle)',
+          elevated: 'var(--color-bg-elevated)',
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface-base)',
+          subtle: 'var(--color-surface-subtle)',
+          elevated: 'var(--color-surface-elevated)',
+        },
+        foreground: {
+          DEFAULT: 'var(--color-text-primary)',
+          secondary: 'var(--color-text-secondary)',
+          muted: 'var(--color-text-muted)',
+          inverse: 'var(--color-text-inverse)',
+        },
+        border: {
+          DEFAULT: 'var(--color-border-default)',
+          subtle: 'var(--color-border-subtle)',
+        },
+        brand: {
+          DEFAULT: 'var(--color-brand-primary)',
+          secondary: 'var(--color-brand-secondary)',
+          accent: 'var(--color-brand-accent)',
+        },
+        action: {
+          'primary-bg': 'var(--color-action-primary-bg)',
+          'primary-text': 'var(--color-action-primary-text)',
+          'primary-hover': 'var(--color-action-primary-hover)',
+          'secondary-bg': 'var(--color-action-secondary-bg)',
+          'secondary-text': 'var(--color-action-secondary-text)',
+        },
+        valuation: {
+          DEFAULT: 'var(--color-value-surface)',
+          text: 'var(--color-value-text)',
+          accent: 'var(--color-value-accent)',
+        },
+        focus: {
+          ring: 'var(--color-focus-ring)',
+        },
+        success: 'var(--color-state-success)',
+        warning: 'var(--color-state-warning)',
+        error: 'var(--color-state-error)',
       },
       fontFamily: {
-        serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-heading)'],
+        sans: ['var(--font-body)'],
       },
       fontSize: {
         'hero': ['48px', { lineHeight: '56px' }],
@@ -49,9 +119,21 @@ const config: Config = {
       },
       borderRadius: {
         'card': '12px',
+        'sm': 'var(--radius-sm)',
+        'md': 'var(--radius-md)',
+        'lg': 'var(--radius-lg)',
+        'xl': 'var(--radius-xl)',
       },
       boxShadow: {
         'card': '0 1px 3px rgba(0,0,0,0.04)',
+      },
+      transitionDuration: {
+        'fast': 'var(--motion-fast)',
+        'base': 'var(--motion-base)',
+        'slow': 'var(--motion-slow)',
+      },
+      transitionTimingFunction: {
+        'standard': 'var(--ease-standard)',
       },
       keyframes: {
         onloadopacity: {
