@@ -46,7 +46,7 @@ export default function MobileMenu() {
 
       {isOpen && mounted && createPortal(
         <div
-          className="fixed top-16 md:top-20 left-0 right-0 bottom-0 bg-white overflow-y-auto shadow-lg border-t border-stone lg:hidden z-[9999]"
+          className="fixed top-16 md:top-20 left-0 right-0 bottom-0 bg-surface overflow-y-auto shadow-lg border-t border-stone lg:hidden z-[9999]"
         >
           <div className="flex flex-col p-6 gap-1">
             {NAV_ITEMS.map((item) => (

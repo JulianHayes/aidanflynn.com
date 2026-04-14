@@ -19,7 +19,7 @@ export default function TrustBar({ className, background = 'stone' }: TrustBarPr
     <section
       className={cn(
         'py-6 md:py-8',
-        background === 'stone' ? 'bg-stone' : 'bg-white',
+        background === 'stone' ? 'bg-stone' : 'bg-surface',
         className
       )}
       aria-label="Trust credentials"

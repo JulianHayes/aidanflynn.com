@@ -32,7 +32,7 @@ export default function PricingPage() {
       </section>
 
       {/* Calculator */}
-      <section className="bg-white py-section-mobile md:py-section" aria-labelledby="calculator">
+      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="calculator">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>

@@ -34,6 +34,16 @@
   --color-state-error: #D96B6B;
 
   --color-focus-ring: rgba(74, 199, 145, 0.35);
+
+  /* Legacy palette mapped for theme switching */
+  --color-navy: #1B474A;
+  --color-navy-light: #2C6366;
+  --color-gold: #C9A96E;
+  --color-gold-light: #D4BC8A;
+  --color-cream: #FAF7F2;
+  --color-stone: #E8E2D8;
+  --color-warm-grey: #6B6560;
+  --color-charcoal: #2D2926;
 }
 
 :root[data-theme="dark"] {
@@ -72,6 +82,16 @@
   --color-state-error: #D96B6B;
 
   --color-focus-ring: rgba(63, 191, 138, 0.35);
+
+  /* Legacy palette — dark equivalents */
+  --color-navy: #4AC791;
+  --color-navy-light: #3FBF8A;
+  --color-gold: #C9A96E;
+  --color-gold-light: #D4BC8A;
+  --color-cream: #071912;
+  --color-stone: rgba(168, 173, 166, 0.14);
+  --color-warm-grey: #A8B3AD;
+  --color-charcoal: #E6EBE8;
 }
 
 /* Fallback for when no data-theme is set (e.g. before JS runs) */
@@ -104,6 +124,14 @@
     --color-state-warning: #C2A65A;
     --color-state-error: #D96B6B;
     --color-focus-ring: rgba(63, 191, 138, 0.35);
+    --color-navy: #4AC791;
+    --color-navy-light: #3FBF8A;
+    --color-gold: #C9A96E;
+    --color-gold-light: #D4BC8A;
+    --color-cream: #071912;
+    --color-stone: rgba(168, 173, 166, 0.14);
+    --color-warm-grey: #A8B3AD;
+    --color-charcoal: #E6EBE8;
   }
 }
 
@@ -136,6 +164,14 @@
     --color-state-warning: #C2A65A;
     --color-state-error: #D96B6B;
     --color-focus-ring: rgba(74, 199, 145, 0.35);
+    --color-navy: #1B474A;
+    --color-navy-light: #2C6366;
+    --color-gold: #C9A96E;
+    --color-gold-light: #D4BC8A;
+    --color-cream: #FAF7F2;
+    --color-stone: #E8E2D8;
+    --color-warm-grey: #6B6560;
+    --color-charcoal: #2D2926;
   }
 }
 

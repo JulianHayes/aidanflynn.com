@@ -78,7 +78,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Details + Form */}
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -171,7 +171,7 @@ export default function ContactPage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange('message')}
-                        className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 resize-y min-h-[120px]"
+                        className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 resize-y min-h-[120px]"
                         rows={5}
                         placeholder="How can we help?"
                         required

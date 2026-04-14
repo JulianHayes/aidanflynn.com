@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <AnimatedSection>
             <ProcessSteps variant="detailed" />
@@ -50,7 +50,7 @@ export default function HowItWorksPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <StaggerItem>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white border border-stone mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-stone mb-4">
                   <Shield size={24} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">The transparency promise</h3>
@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
             </StaggerItem>
             <StaggerItem>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white border border-stone mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-stone mb-4">
                   <RotateCcw size={24} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">Free returns, no questions</h3>
@@ -72,7 +72,7 @@ export default function HowItWorksPage() {
             </StaggerItem>
             <StaggerItem>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white border border-stone mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-stone mb-4">
                   <User size={24} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">Personal accountability</h3>

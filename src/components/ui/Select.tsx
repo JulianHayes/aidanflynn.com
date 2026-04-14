@@ -23,7 +23,7 @@ export default function Select({ label, options, error, className, id, ...props 
       <select
         id={selectId}
         className={cn(
-          'w-full px-4 py-3 min-h-[44px] rounded-lg border border-stone bg-white text-charcoal text-body',
+          'w-full px-4 py-3 min-h-[44px] rounded-lg border border-stone bg-surface text-charcoal text-body',
           'focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold',
           'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
           'transition-colors duration-200 appearance-none',
