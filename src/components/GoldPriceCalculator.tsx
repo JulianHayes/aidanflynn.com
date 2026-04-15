@@ -75,7 +75,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               id="calc-metal"
               value={metal}
               onChange={(e) => handleMetalChange(e.target.value as MetalType)}
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             >
               {METAL_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -92,7 +92,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               id="calc-carat"
               value={carat}
               onChange={(e) => setCarat(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             >
               {caratOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -113,7 +113,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
               placeholder="Enter weight in grams"
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             />
           </div>
 

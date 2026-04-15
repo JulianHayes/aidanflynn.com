@@ -20,7 +20,7 @@ export default function Input({ label, error, helperText, className, id, ...prop
         className={cn(
           'w-full px-4 py-3 min-h-[44px] rounded-lg border border-stone bg-surface text-charcoal text-body',
           'placeholder:text-warm-grey/60',
-          'focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold',
+          'focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand',
           'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
           'transition-colors duration-200',
           error && 'border-error focus:ring-error focus:border-error',

@@ -22,7 +22,7 @@ No test framework is configured.
 **Next.js App Router** with TypeScript and Tailwind CSS. Path alias `@/*` maps to `src/*`.
 
 ### Rendering strategy
-- All pages are statically rendered except five `'use client'` components: `MobileMenu`, `FAQAccordion`, `GoldPriceCalculator`, `KitRequestForm`, `ThemeToggle`
+- All pages are statically rendered. Client components (`'use client'`): `Navigation`, `MobileMenu`, `FAQAccordion`, `GoldPriceCalculator`, `KitRequestForm`, `ThemeToggle`, `AnimatedHeadline`, `AnimatedSection`. Two page-level client components: `contact/page.tsx` (form state), `locations/dublin/page.tsx` (kit form).
 - `/api/gold-price` is a Route Handler returning hardcoded spot prices (placeholder for GoldAPI.io)
 
 ### Key files

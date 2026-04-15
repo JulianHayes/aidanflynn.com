@@ -37,7 +37,7 @@ export default function MobileMenu() {
     <div className="lg:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-navy"
+        className="p-2.5 min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-navy"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
       >
