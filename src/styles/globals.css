@@ -10,6 +10,18 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
     color: var(--color-text-primary);
@@ -33,34 +45,36 @@
   }
 }
 
-/* Illuminated text glow animations */
-@keyframes onloadopacity {
-  24% {
-    opacity: 0;
+/* Illuminated text glow animations — disabled for reduced motion users */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes onloadopacity {
+    24% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  100% {
-    opacity: 1;
-  }
-}
 
-@keyframes onloadbgt {
-  0% {
-    translate: 0 -70%;
-    opacity: 0.3;
+  @keyframes onloadbgt {
+    0% {
+      translate: 0 -70%;
+      opacity: 0.3;
+    }
+    100% {
+      translate: 0 -64%;
+      opacity: 0.8;
+    }
   }
-  100% {
-    translate: 0 -64%;
-    opacity: 0.8;
-  }
-}
 
-@keyframes onloadbgb {
-  0% {
-    translate: 0 70%;
-    opacity: 0.3;
-  }
-  100% {
-    translate: 0 64%;
-    opacity: 0.8;
+  @keyframes onloadbgb {
+    0% {
+      translate: 0 70%;
+      opacity: 0.3;
+    }
+    100% {
+      translate: 0 64%;
+      opacity: 0.8;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: ['selector', '[data-theme="dark"]'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,19 +10,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // --- Legacy palette (retained for backward compat) ---
+        // --- Legacy palette (theme-aware via CSS vars) ---
         navy: {
-          DEFAULT: '#1B474A',
-          light: '#2C6366',
+          DEFAULT: 'var(--color-navy)',
+          light: 'var(--color-navy-light)',
         },
         gold: {
-          DEFAULT: '#C9A96E',
-          light: '#D4BC8A',
+          DEFAULT: 'var(--color-gold)',
+          light: 'var(--color-gold-light)',
         },
-        cream: '#FAF7F2',
-        stone: '#E8E2D8',
-        'warm-grey': '#6B6560',
-        charcoal: '#2D2926',
+        cream: 'var(--color-cream)',
+        stone: 'var(--color-stone)',
+        'warm-grey': 'var(--color-warm-grey)',
+        charcoal: 'var(--color-charcoal)',
+
+        // --- Illuminated hero effect ---
+        glow: {
+          gradient: { from: '#dfe5ee', to: '#fffaf6' },
+          text: '#e7dfd6',
+          subtitle: { from: '#86868b', to: '#bdc2c9' },
+        },
 
         // --- Reference scales ---
         green: {

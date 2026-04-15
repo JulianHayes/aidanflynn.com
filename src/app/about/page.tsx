@@ -31,7 +31,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Story */}
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* Photo placeholder */}

@@ -118,7 +118,7 @@ export default function KitRequestForm() {
           id="items"
           value={formData.items}
           onChange={handleChange('items')}
-          className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors duration-200 resize-y min-h-[100px]"
+          className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors duration-200 resize-y min-h-[100px]"
           rows={4}
           placeholder="Describe what you would like to sell (e.g., gold rings, silver bracelet, etc.)"
         />

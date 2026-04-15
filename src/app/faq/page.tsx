@@ -31,7 +31,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-3xl mx-auto">
             <FAQAccordion sections={FAQ_SECTIONS} />

@@ -71,7 +71,7 @@ export default function HomePage() {
       </section>
 
       {/* Price Calculator Preview */}
-      <section className="bg-white py-section-mobile md:py-section" aria-labelledby="pricing-preview">
+      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="pricing-preview">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <AnimatedSection>
             <div className="text-center mb-10">
@@ -151,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-white py-section-mobile md:py-section" aria-labelledby="testimonials">
+      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="testimonials">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <AnimatedSection>
             <h2 id="testimonials" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">

@@ -30,8 +30,8 @@ export default function Navigation() {
       className={cn(
         'sticky top-0 z-40 transition-all duration-300',
         scrolled
-          ? 'bg-white/98 backdrop-blur-md shadow-card border-b border-stone/50'
-          : 'bg-white/95 backdrop-blur-sm border-b border-stone'
+          ? 'bg-surface backdrop-blur-md shadow-card border-b border-stone'
+          : 'bg-surface backdrop-blur-sm border-b border-stone'
       )}
     >
       <nav className="max-w-content mx-auto px-6 md:px-12 lg:px-20" aria-label="Main navigation">

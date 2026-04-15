@@ -57,7 +57,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
   }, [metal, carat, weight, currency])
 
   return (
-    <div className={cn('bg-white rounded-card border border-stone shadow-card', className)}>
+    <div className={cn('bg-surface rounded-card border border-stone shadow-card', className)}>
       <div className={cn(compact ? 'p-6' : 'p-6 md:p-8')}>
         {!compact && (
           <h3 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
@@ -75,7 +75,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               id="calc-metal"
               value={metal}
               onChange={(e) => handleMetalChange(e.target.value as MetalType)}
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             >
               {METAL_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -92,7 +92,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               id="calc-carat"
               value={carat}
               onChange={(e) => setCarat(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             >
               {caratOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -113,7 +113,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
               placeholder="Enter weight in grams"
-              className="w-full px-4 py-3 rounded-lg border border-stone bg-white text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors"
             />
           </div>
 

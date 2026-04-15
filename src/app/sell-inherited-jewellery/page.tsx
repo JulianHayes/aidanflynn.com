@@ -32,7 +32,7 @@ export default function SellInheritedJewelleryPage() {
       </section>
 
       {/* Understanding */}
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-2xl mx-auto space-y-6 text-body text-warm-grey">
             <p>
@@ -59,7 +59,7 @@ export default function SellInheritedJewelleryPage() {
       </section>
 
       {/* Key Reassurances */}
-      <section className="bg-white py-section-mobile md:py-section" aria-labelledby="reassurances">
+      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="reassurances">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <h2 id="reassurances" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">
             What you should know

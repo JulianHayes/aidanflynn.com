@@ -19,7 +19,7 @@ export default function TermsPage() {
         </div>
       </section>
 
-      <section className="bg-white py-section-mobile md:py-section">
+      <section className="bg-surface py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-2xl space-y-8 text-body text-warm-grey">
             <div>
