@@ -22,25 +22,61 @@ No test framework is configured.
 **Next.js App Router** with TypeScript and Tailwind CSS. Path alias `@/*` maps to `src/*`.
 
 ### Rendering strategy
-- All pages are statically rendered except four `'use client'` components: `MobileMenu`, `FAQAccordion`, `GoldPriceCalculator`, `KitRequestForm`
+- All pages are statically rendered except five `'use client'` components: `MobileMenu`, `FAQAccordion`, `GoldPriceCalculator`, `KitRequestForm`, `ThemeToggle`
 - `/api/gold-price` is a Route Handler returning hardcoded spot prices (placeholder for GoldAPI.io)
 
 ### Key files
 - `src/lib/constants.ts` — Central data store: spot prices, buy percentages, locations, nav items, testimonials, FAQ content, blog posts. Most page content pulls from here.
 - `src/lib/utils.ts` — `cn()` for classnames, `formatCurrency()`, `formatDate()`
-- `src/app/layout.tsx` — Root layout with Navigation, Footer, Google Fonts via `<link>`, skip-to-content link
-- `tailwind.config.ts` — Full design system: custom colors (navy/gold/cream/stone/warm-grey/charcoal), typography scale (hero through caption), card border-radius and shadow
+- `src/app/layout.tsx` — Root layout with Navigation, Footer, Google Fonts via `<link>`, skip-to-content link, `data-theme="light"` attribute
+- `tailwind.config.ts` — Design system: theme-aware legacy palette, reference colour scales, semantic token colours, typography, spacing, motion
 
 ### Component patterns
-- `Button` is polymorphic: renders `<Link>` when `href` is provided, `<button>` otherwise. Variants: `primary` (navy), `secondary` (navy border), `gold` (gold bg).
+- `Button` is polymorphic: renders `<Link>` when `href` is provided, `<button>` otherwise. Variants: `primary` (navy), `secondary` (navy border), `gold` (gold bg). All sizes meet 44px minimum touch target.
 - UI components (`src/components/ui/`) are atomic building blocks. Section components (`src/components/`) compose them for specific use cases.
 - Gold price calculation: `weight × spotPrice × buyPercentage`. Spot prices and buy percentages are in `constants.ts`.
 
+### Design token system
+
+Three-tier token architecture: **reference → system → component**.
+
+#### Token files (source of truth)
+- `tokens/reference.json` — Primitive values: green scale (350–950), neutral scale (0–800), text colours, state colours, fonts, spacing, radius, motion
+- `tokens/components.json` — Component-level token mappings (card, button, hero, input, nav, valuation, divider)
+- `tokens/themes/light.json` — Light theme: resolves system tokens to reference tokens
+- `tokens/themes/dark.json` — Dark theme: resolves system tokens to reference tokens
+
+#### CSS files
+- `styles/tokens.css` — CSS custom properties for typography (`--type-*`), spacing (`--space-*`), radius (`--radius-*`), motion (`--motion-*`, `--ease-*`)
+- `styles/theme.css` — Resolved colour CSS variables for light and dark themes via `[data-theme]` attribute. Also contains legacy palette variables (`--color-navy`, `--color-cream`, etc.) that switch per theme. Includes `prefers-color-scheme` fallbacks for pre-JS rendering.
+
+#### How colours work
+The legacy Tailwind palette (`navy`, `gold`, `cream`, `stone`, `warm-grey`, `charcoal`) is wired to CSS variables in `tailwind.config.ts`, not hardcoded hex values. When `data-theme` changes, every class like `bg-cream`, `text-charcoal`, `border-stone` automatically switches to its dark equivalent. **Never add hardcoded hex values to component code** — always use Tailwind classes that reference the token system.
+
+Key colour class mappings:
+- Page backgrounds: `bg-cream` (switches per theme) or `bg-surface` (white/dark surface)
+- Headings: `text-charcoal` (switches per theme)
+- Body text: `text-warm-grey` (switches per theme)
+- Brand accent: `text-navy`, `bg-navy` (switches per theme)
+- Borders: `border-stone` (switches per theme)
+- Cards/inputs/nav: `bg-surface` (white in light, dark surface in dark)
+- Gold accent: `bg-gold`, `text-gold` (same in both themes)
+
+Semantic system tokens are also available as Tailwind classes: `bg-background`, `bg-surface-elevated`, `text-foreground`, `text-foreground-secondary`, `bg-brand`, `text-brand-accent`, `border-border-subtle`, etc.
+
+#### Dark mode
+- Controlled via `data-theme` attribute on `<html>` (not CSS class)
+- Tailwind config: `darkMode: ['selector', '[data-theme="dark"]']`
+- `ThemeToggle` component (slider next to hamburger): reads `prefers-color-scheme` on mount, persists choice to `localStorage`, listens for OS changes
+- `layout.tsx` uses `suppressHydrationWarning` to prevent mismatch warnings
+- `prefers-reduced-motion` is respected globally (animations disabled)
+
 ### Design system
-- Colour palette: navy `#1B2A4A`, gold `#C9A96E` (used sparingly — prices, CTAs, calculator only), cream `#FAF7F2` (page bg), stone `#E8E2D8`, warm-grey `#6B6560` (body text), charcoal `#2D2926` (headings)
-- Fonts: Libre Baskerville (serif, headings), Inter (sans, body/data/nav)
+- Colour palette: green-based with neutral tones. Gold `#C9A96E` used sparingly — prices, CTAs, calculator only.
+- Fonts: Libre Baskerville (serif, headings), Inter (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars
 - Max content width: 1200px. Generous whitespace. Single-column for text-heavy pages.
 - The aesthetic is modern fintech (Wise/Monzo), not cash-for-gold. No gold gradients, no stock photos, no visual noise.
+- Accessibility: 44px minimum touch targets, focus rings via `--color-focus-ring`, disabled states on all interactive elements, `aria-invalid`/`aria-describedby` on form fields
 
 ### SEO
 - Per-page metadata via Next.js Metadata API with template `%s | Aidan Flynn`
