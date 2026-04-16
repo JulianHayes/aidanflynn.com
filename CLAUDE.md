@@ -17,6 +17,10 @@ npm run lint     # ESLint via next lint
 
 No test framework is configured.
 
+### Key dependencies
+- `framer-motion` — page transition animations, nav underline `layoutId`, header entrance
+- `lucide-react` — icon set (Phone, Mail, MapPin, Menu, X, Sun, Moon, etc.)
+
 ## Architecture
 
 **Next.js App Router** with TypeScript and Tailwind CSS. Path alias `@/*` maps to `src/*`.
