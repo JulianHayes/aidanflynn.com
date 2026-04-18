@@ -89,7 +89,7 @@ export default function BelfastPage() {
             <div>
               <GoldPriceCalculator />
               <div className="mt-6 text-center">
-                <Button href="/contact" variant="gold" size="lg" className="w-full">
+                <Button href="/contact" variant="primary" size="lg" className="w-full">
                   Request a free kit
                 </Button>
               </div>

@@ -46,10 +46,10 @@ export default function ProcessSteps({ className, variant = 'compact' }: Process
             variant === 'detailed' && 'text-left'
           )}>
             <div className={cn(
-              'inline-flex items-center justify-center w-16 h-16 rounded-full bg-cream border border-stone mb-4',
+              'inline-flex items-center justify-center w-16 h-16 rounded-full bg-background border border-border-subtle text-navy shadow-elev-chip-inset mb-4',
               variant === 'detailed' && 'mb-6'
             )}>
-              <step.icon size={24} className="text-navy" />
+              <step.icon size={24} />
             </div>
             <div className="mb-2 text-caption font-medium text-gold uppercase tracking-wider">
               Step {index + 1}

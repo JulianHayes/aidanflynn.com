@@ -14,6 +14,7 @@ const config: Config = {
         navy: {
           DEFAULT: 'var(--color-navy)',
           light: 'var(--color-navy-light)',
+          deep: 'var(--color-deep)',
         },
         gold: {
           DEFAULT: 'var(--color-gold)',
@@ -105,6 +106,7 @@ const config: Config = {
       fontFamily: {
         serif: ['var(--font-heading)'],
         sans: ['var(--font-body)'],
+        caption: ['var(--font-caption)'],
       },
       fontSize: {
         'hero': ['48px', { lineHeight: '56px' }],
@@ -133,7 +135,17 @@ const config: Config = {
         'xl': 'var(--radius-xl)',
       },
       boxShadow: {
-        'card': '0 1px 3px rgba(0,0,0,0.04)',
+        'card': 'var(--elev-card)',
+        'elev-card': 'var(--elev-card)',
+        'elev-card-hover': 'var(--elev-card-hover)',
+        'elev-btn': 'var(--elev-btn)',
+        'elev-btn-hover': 'var(--elev-btn-hover)',
+        'elev-btn-active': 'var(--elev-btn-active)',
+        'elev-btn-outline': 'var(--elev-btn-outline)',
+        'elev-btn-outline-hover': 'var(--elev-btn-outline-hover)',
+        'elev-inset': 'var(--elev-inset)',
+        'elev-inset-focus': 'var(--elev-inset-focus)',
+        'elev-chip-inset': 'var(--elev-chip-inset)',
       },
       transitionDuration: {
         'fast': 'var(--motion-fast)',

@@ -108,8 +108,8 @@ export default function SellInheritedJewelleryPage() {
           <p className="text-body text-warm-grey mb-8 max-w-xl mx-auto">
             There is no rush. If you would like to know what your inherited jewellery is worth, our calculator gives you an instant estimate. Or get in touch and we will talk you through it.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/pricing" variant="gold" size="lg">
+          <div className="hero-cta-pair flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/pricing" variant="primary" size="lg">
               See what yours is worth
             </Button>
             <Button href="/contact" variant="secondary" size="lg">

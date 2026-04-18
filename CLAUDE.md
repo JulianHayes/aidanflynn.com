@@ -57,10 +57,11 @@ Key colour class mappings:
 - Page backgrounds: `bg-cream` (switches per theme) or `bg-surface` (white/dark surface)
 - Headings: `text-charcoal` (switches per theme)
 - Body text: `text-warm-grey` (switches per theme)
-- Brand accent: `text-navy`, `bg-navy` (switches per theme)
+- Brand accent: `text-navy`, `bg-navy` = `#174634` light / muted sage `#8E9B94` dark (switches per theme)
+- Deepest green (footer, CTA band, logo lockup): `bg-navy-deep`, `text-navy-deep` = `#0D2E22` light / `#081B14` dark
 - Borders: `border-stone` (switches per theme)
 - Cards/inputs/nav: `bg-surface` (white in light, dark surface in dark)
-- Gold accent: `bg-gold`, `text-gold` (same in both themes)
+- Gold accent: `bg-gold`, `text-gold` (same in both themes) — prices and step eyebrows only, never on CTAs
 
 Semantic system tokens are also available as Tailwind classes: `bg-background`, `bg-surface-elevated`, `text-foreground`, `text-foreground-secondary`, `bg-brand`, `text-brand-accent`, `border-border-subtle`, etc.
 
@@ -72,8 +73,10 @@ Semantic system tokens are also available as Tailwind classes: `bg-background`, 
 - `prefers-reduced-motion` is respected globally (animations disabled)
 
 ### Design system
-- Colour palette: green-based with neutral tones. Gold `#C9A96E` used sparingly — prices, CTAs, calculator only.
-- Fonts: Libre Baskerville (serif, headings), Inter (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars
+- **Colour palette:** deep-green system. Brand green `#174634` at rest, `#1F5C45` on hover (light mode). In dark mode: muted sage `#8E9B94` at rest, `#A8B3AD` on hover. A third darker green `#0D2E22` (`--color-deep`) is reserved for the footer, pre-footer CTA band, and brand lockup. Gold `#C9A96E` used sparingly — **prices and step eyebrows only**, never on CTAs.
+- **Fonts:** PT Serif (headings, body long-form, buttons), PT Sans (UI labels, nav, forms), PT Serif Caption italic (small disclaimers/captions). Loaded via `--font-heading`, `--font-body`, `--font-caption`.
+- **Elevation:** three shadow families — `--elev-card` / `--elev-card-hover` (embossed lift for cards), `--elev-btn` / `--elev-btn-hover` / `--elev-btn-active` (raised buttons with top-highlight + floor shadow), `--elev-inset` / `--elev-inset-focus` / `--elev-chip-inset` (pressed-in inputs, chips, icon niches). Each has a dark-mode variant so the depth reads correctly on dark surfaces.
+- **Logo:** inline SVG at `public/logo.svg`, unified single-colour lockup with the PT Serif wordmark (see `components/layout/Brand.tsx`). Uses `--color-deep` in light mode, `--color-navy-light` in dark mode, white in the footer.
 - Max content width: 1200px. Generous whitespace. Single-column for text-heavy pages.
 - The aesthetic is modern fintech (Wise/Monzo), not cash-for-gold. No gold gradients, no stock photos, no visual noise.
 - Accessibility: 44px minimum touch targets, focus rings via `--color-focus-ring`, disabled states on all interactive elements, `aria-invalid`/`aria-describedby` on form fields

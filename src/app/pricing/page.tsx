@@ -99,7 +99,7 @@ export default function PricingPage() {
       <TrustBar background="white" />
 
       {/* Final CTA */}
-      <section className="bg-navy py-section-mobile md:py-section">
+      <section className="bg-navy-deep py-section-mobile md:py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 text-center">
           <h2 className="font-serif text-page-heading-mobile md:text-page-heading text-white mb-4">
             Happy with the numbers?
@@ -107,7 +107,7 @@ export default function PricingPage() {
           <p className="text-body text-white/70 mb-8 max-w-xl mx-auto">
             Request your free insured posting kit and find out exactly what your items are worth.
           </p>
-          <Button href="/contact" variant="gold" size="lg">
+          <Button href="/contact" variant="primary" size="lg">
             Get your free posting kit
           </Button>
         </div>

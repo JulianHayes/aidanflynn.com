@@ -9,16 +9,18 @@ interface CardProps {
 const paddingStyles = {
   sm: 'p-4',
   md: 'p-6',
-  lg: 'p-8',
+  lg: 'p-7',
 }
 
 export default function Card({ children, className, padding = 'lg' }: CardProps) {
   return (
-    <div className={cn(
-      'bg-surface border border-stone rounded-card shadow-card transition-shadow duration-300 hover:shadow-md',
-      paddingStyles[padding],
-      className
-    )}>
+    <div
+      className={cn(
+        'bg-surface border border-border-subtle rounded-[14px] shadow-elev-card hover:shadow-elev-card-hover transition-[box-shadow,transform] duration-[250ms] ease-standard',
+        paddingStyles[padding],
+        className
+      )}
+    >
       {children}
     </div>
   )

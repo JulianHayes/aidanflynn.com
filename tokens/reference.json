@@ -2,9 +2,11 @@
   "ref": {
     "color": {
       "green": {
+        "deep": "#0D2E22",
         "950": "#071912",
         "900": "#0F241C",
         "800": "#17372E",
+        "750": "#174634",
         "700": "#1F5C45",
         "600": "#2E7A5B",
         "550": "#2F6B53",
@@ -40,8 +42,9 @@
       }
     },
     "font": {
-      "serif": "\"Libre Baskerville\", Georgia, serif",
-      "sans": "\"Inter\", \"Source Sans 3\", system-ui, sans-serif"
+      "serif": "\"PT Serif\", Georgia, serif",
+      "sans": "\"PT Sans\", system-ui, sans-serif",
+      "caption": "\"PT Serif Caption\", \"PT Serif\", Georgia, serif"
     },
     "space": {
       "2": "0.125rem",

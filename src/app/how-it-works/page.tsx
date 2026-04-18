@@ -87,7 +87,7 @@ export default function HowItWorksPage() {
 
       <TrustBar background="white" />
 
-      <section className="bg-navy py-section-mobile md:py-section relative overflow-hidden">
+      <section className="bg-navy-deep py-section-mobile md:py-section relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,169,110,0.08)_0%,_transparent_60%)]" />
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 text-center relative">
           <AnimatedSection>
@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
             <p className="text-body text-white/70 mb-8 max-w-xl mx-auto">
               Request your free posting kit and we will have it with you within 24 hours.
             </p>
-            <Button href="/contact" variant="gold" size="lg">
+            <Button href="/contact" variant="primary" size="lg">
               Get your free kit
             </Button>
           </AnimatedSection>

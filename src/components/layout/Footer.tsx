@@ -1,30 +1,15 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { SITE_NAME, CONTACT, LOCATIONS } from '@/lib/constants'
-import { Shield, Award, Star, Phone, Mail } from 'lucide-react'
+import { Shield, Award, Star, Mail } from 'lucide-react'
+import Brand from './Brand'
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white/80" role="contentinfo">
+    <footer className="bg-navy-deep text-white/80" role="contentinfo">
       <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div>
-            <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn \u2014 Home">
-              <Image
-                src="/images/logo-mark.svg"
-                alt=""
-                width={30}
-                height={23}
-                className="h-6 w-auto brightness-0 invert"
-              />
-              <Image
-                src="/images/logo-wordmark.svg"
-                alt="Aidan Flynn"
-                width={140}
-                height={14}
-                className="h-3.5 w-auto brightness-0 invert"
-              />
-            </Link>
+            <Brand tone="inverse" />
             <p className="mt-4 text-small text-white/60">
               Transparent precious metals buying across the UK and Ireland. Published pricing, free insured postage, same-day payment.
             </p>
@@ -77,8 +62,15 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href={`tel:${CONTACT.phone}`} className="flex items-center gap-2 text-small text-white/60 hover:text-white transition-colors">
-                  <Phone size={14} />
+                <a
+                  href={`tel:${CONTACT.phone}`}
+                  className="flex items-center gap-2 text-small text-white/60 hover:text-white transition-colors"
+                >
+                  <svg width="12" height="17" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="0.75" y="0.75" width="12.5" height="18.5" rx="2.25" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                    <path d="M5.2 2.6 H8.8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                    <circle cx="7" cy="16.6" r="0.9" fill="currentColor" />
+                  </svg>
                   {CONTACT.phoneDisplay}
                 </a>
               </li>

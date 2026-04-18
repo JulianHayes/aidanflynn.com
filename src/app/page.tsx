@@ -37,8 +37,8 @@ export default function HomePage() {
               <p className="text-body md:text-subheading text-warm-grey mb-10 max-w-2xl">
                 Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/pricing" variant="gold" size="lg">
+              <div className="hero-cta-pair flex flex-col sm:flex-row gap-4">
+                <Button href="/pricing" variant="primary" size="lg">
                   See what yours is worth
                 </Button>
                 <Button href="/how-it-works" variant="secondary" size="lg">
@@ -115,7 +115,7 @@ export default function HomePage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <StaggerItem>
               <Card className="h-full">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cream border border-stone mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Eye size={22} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">Radical transparency</h3>
@@ -126,7 +126,7 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <Card className="h-full">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cream border border-stone mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Heart size={22} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">Your items matter</h3>
@@ -137,7 +137,7 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <Card className="h-full">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cream border border-stone mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <User size={22} className="text-navy" />
                 </div>
                 <h3 className="font-serif text-lg text-charcoal mb-3">A real person, not a PO box</h3>
@@ -188,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-navy py-section-mobile md:py-section relative overflow-hidden">
+      <section className="bg-navy-deep py-section-mobile md:py-section relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,169,110,0.08)_0%,_transparent_60%)]" />
         <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 text-center relative">
           <AnimatedSection>
@@ -198,7 +198,7 @@ export default function HomePage() {
             <p className="text-body text-white/70 mb-8 max-w-xl mx-auto">
               Free insured postage. No obligation. Free returns if you change your mind.
             </p>
-            <Button href="/contact" variant="gold" size="lg">
+            <Button href="/contact" variant="primary" size="lg">
               Get your free posting kit
             </Button>
           </AnimatedSection>

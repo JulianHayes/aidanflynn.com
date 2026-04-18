@@ -50,11 +50,11 @@ export default function FAQPage() {
           <p className="text-body text-warm-grey mb-8 max-w-xl mx-auto">
             We are happy to help. Get in touch by phone, email, or visit one of our locations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="hero-cta-pair flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact" variant="primary" size="lg">
               Get in touch
             </Button>
-            <Button href="/pricing" variant="gold" size="lg">
+            <Button href="/pricing" variant="secondary" size="lg">
               See what yours is worth
             </Button>
           </div>

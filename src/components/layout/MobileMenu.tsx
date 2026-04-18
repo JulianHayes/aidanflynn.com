@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { NAV_ITEMS, CONTACT } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import Button from '@/components/ui/Button'
@@ -68,14 +68,20 @@ export default function MobileMenu() {
 
             <a
               href={`tel:${CONTACT.phone}`}
-              className="flex items-center gap-3 py-3 px-4 text-warm-grey hover:text-navy transition-colors"
+              className="group flex items-center gap-3 py-3 px-4 text-warm-grey hover:text-navy transition-colors"
             >
-              <Phone size={20} />
+              <span className="phone-ic">
+                <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="0.75" y="0.75" width="12.5" height="18.5" rx="2.25" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                  <path d="M5.2 2.6 H8.8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                  <circle cx="7" cy="16.6" r="0.9" fill="currentColor" />
+                </svg>
+              </span>
               <span className="font-medium">{CONTACT.phoneDisplay}</span>
             </a>
 
             <div className="mt-4">
-              <Button href="/contact" variant="gold" size="md" className="w-full">
+              <Button href="/contact" variant="primary" size="md" className="w-full">
                 Get Your Free Kit
               </Button>
             </div>
