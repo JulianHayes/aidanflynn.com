@@ -8,8 +8,7 @@ import {
   METAL_OPTIONS,
   CARAT_OPTIONS,
 } from '@/lib/constants'
-import { formatCurrency } from '@/lib/utils'
-import { cn } from '@/lib/utils'
+import { cn, formatCurrency } from '@/lib/utils'
 
 type MetalType = 'gold' | 'silver' | 'platinum'
 type Currency = 'GBP' | 'EUR'
