@@ -30,12 +30,12 @@ export default function Navigation() {
       className={cn(
         'sticky top-0 z-40 transition-all duration-300',
         scrolled
-          ? 'bg-surface backdrop-blur-md shadow-card border-b border-stone'
-          : 'bg-surface backdrop-blur-sm border-b border-stone'
+          ? 'border-b border-stone bg-surface shadow-card backdrop-blur-md'
+          : 'border-b border-stone bg-surface backdrop-blur-sm'
       )}
     >
-      <nav className="max-w-content mx-auto px-6 md:px-12 lg:px-20" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <nav className="mx-auto max-w-content px-6 md:px-12 lg:px-20" aria-label="Main navigation">
+        <div className="flex h-16 items-center justify-between md:h-20">
           <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn \u2014 Home">
             <Image
               src="/images/logo-mark.svg"
@@ -49,20 +49,18 @@ export default function Navigation() {
               alt="Aidan Flynn"
               width={160}
               height={16}
-              className="hidden sm:block h-4 w-auto"
+              className="hidden h-4 w-auto sm:block"
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   'relative font-sans text-small font-medium uppercase tracking-wider transition-colors duration-200',
-                  pathname === item.href
-                    ? 'text-navy'
-                    : 'text-warm-grey hover:text-navy'
+                  pathname === item.href ? 'text-navy' : 'text-warm-grey hover:text-navy'
                 )}
               >
                 {item.label}
@@ -77,10 +75,10 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden items-center gap-6 lg:flex">
             <a
               href={`tel:${CONTACT.phone}`}
-              className="flex items-center gap-2 text-small font-medium text-warm-grey hover:text-navy transition-colors"
+              className="flex items-center gap-2 text-small font-medium text-warm-grey transition-colors hover:text-navy"
             >
               <Phone size={16} />
               {CONTACT.phoneDisplay}

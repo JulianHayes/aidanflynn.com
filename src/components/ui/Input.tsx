@@ -13,17 +13,17 @@ export default function Input({ label, error, helperText, className, id, ...prop
     <div className="space-y-1">
       <label htmlFor={inputId} className="block text-small font-medium text-charcoal">
         {label}
-        {props.required && <span className="text-error ml-1">*</span>}
+        {props.required && <span className="ml-1 text-error">*</span>}
       </label>
       <input
         id={inputId}
         className={cn(
-          'w-full px-4 py-3 min-h-[44px] rounded-lg border border-stone bg-surface text-charcoal text-body',
+          'min-h-[44px] w-full rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal',
           'placeholder:text-warm-grey/60',
-          'focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand',
-          'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
+          'focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring',
+          'disabled:bg-stone/30 disabled:cursor-not-allowed disabled:opacity-50',
           'transition-colors duration-200',
-          error && 'border-error focus:ring-error focus:border-error',
+          error && 'border-error focus:border-error focus:ring-error',
           className
         )}
         aria-invalid={error ? 'true' : undefined}
