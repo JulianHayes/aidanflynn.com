@@ -18,10 +18,10 @@ interface GoldPriceCalculatorProps {
   compact?: boolean
 }
 
-export default function GoldPriceCalculator({
-  className,
-  compact = false,
-}: GoldPriceCalculatorProps) {
+const fieldClass =
+  'w-full px-4 py-3 min-h-[44px] rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus transition-[box-shadow,border-color] duration-200'
+
+export default function GoldPriceCalculator({ className, compact = false }: GoldPriceCalculatorProps) {
   const [metal, setMetal] = useState<MetalType>('gold')
   const [carat, setCarat] = useState<string>('9ct')
   const [weight, setWeight] = useState<string>('')
@@ -59,7 +59,7 @@ export default function GoldPriceCalculator({
   }, [metal, carat, weight, currency])
 
   return (
-    <div className={cn('rounded-card border border-stone bg-surface shadow-card', className)}>
+    <div className={cn('bg-surface rounded-[14px] border border-border-subtle shadow-elev-card', className)}>
       <div className={cn(compact ? 'p-6' : 'p-6 md:p-8')}>
         {!compact && (
           <h3 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
@@ -77,7 +77,7 @@ export default function GoldPriceCalculator({
               id="calc-metal"
               value={metal}
               onChange={(e) => handleMetalChange(e.target.value as MetalType)}
-              className="w-full rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring"
+              className={fieldClass}
             >
               {METAL_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -96,7 +96,7 @@ export default function GoldPriceCalculator({
               id="calc-carat"
               value={carat}
               onChange={(e) => setCarat(e.target.value)}
-              className="w-full rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring"
+              className={fieldClass}
             >
               {caratOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -119,7 +119,7 @@ export default function GoldPriceCalculator({
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
               placeholder="Enter weight in grams"
-              className="placeholder:text-warm-grey/60 w-full rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring"
+              className={fieldClass}
             />
           </div>
 
@@ -128,10 +128,10 @@ export default function GoldPriceCalculator({
             <button
               onClick={() => setCurrency('GBP')}
               className={cn(
-                'rounded-lg px-4 py-2 text-small font-medium transition-colors',
+                'px-4 py-2 min-h-[40px] rounded-lg text-small font-medium transition-[box-shadow,background-color,color] duration-200',
                 currency === 'GBP'
-                  ? 'bg-navy text-white'
-                  : 'bg-cream text-warm-grey hover:text-navy'
+                  ? 'bg-navy text-white shadow-elev-inset'
+                  : 'bg-background text-warm-grey hover:text-navy shadow-elev-chip-inset'
               )}
             >
               GBP (£)
@@ -139,10 +139,10 @@ export default function GoldPriceCalculator({
             <button
               onClick={() => setCurrency('EUR')}
               className={cn(
-                'rounded-lg px-4 py-2 text-small font-medium transition-colors',
+                'px-4 py-2 min-h-[40px] rounded-lg text-small font-medium transition-[box-shadow,background-color,color] duration-200',
                 currency === 'EUR'
-                  ? 'bg-navy text-white'
-                  : 'bg-cream text-warm-grey hover:text-navy'
+                  ? 'bg-navy text-white shadow-elev-inset'
+                  : 'bg-background text-warm-grey hover:text-navy shadow-elev-chip-inset'
               )}
             >
               EUR (€)
@@ -151,11 +151,11 @@ export default function GoldPriceCalculator({
         </div>
 
         {/* Result */}
-        <div className="mt-6 border-t border-stone pt-6">
+        <div className="mt-6 pt-6 border-t border-border-subtle">
           {calculation ? (
             <div>
-              <p className="mb-1 text-small text-warm-grey">We would pay you:</p>
-              <p className="font-sans text-hero-mobile font-semibold text-gold md:text-hero">
+              <p className="text-small text-warm-grey mb-1">We would pay you:</p>
+              <p className="text-hero-mobile md:text-hero font-bold font-serif text-gold">
                 {formatCurrency(calculation.totalAmount, currency)}
               </p>
               <div className="mt-4 space-y-2 text-small text-warm-grey">
@@ -192,9 +192,8 @@ export default function GoldPriceCalculator({
           )}
         </div>
 
-        <p className="mt-4 text-caption text-warm-grey">
-          This is an estimate based on the live spot price. Your final valuation may differ based on
-          the exact purity of your items.
+        <p className="mt-4 text-caption caption-italic text-warm-grey">
+          This is an estimate based on the live spot price. Your final valuation may differ based on the exact purity of your items.
         </p>
       </div>
     </div>

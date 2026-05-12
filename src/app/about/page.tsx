@@ -138,24 +138,19 @@ export default function AboutPage() {
       <TrustBar background="white" />
 
       {/* Final CTA */}
-      <section className="bg-navy py-section-mobile md:py-section">
-        <div className="mx-auto max-w-content px-6 text-center md:px-12 lg:px-20">
-          <h2 className="mb-4 font-serif text-page-heading-mobile text-white md:text-page-heading">
+      <section className="bg-navy-deep py-section-mobile md:py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 text-center">
+          <h2 className="font-serif text-page-heading-mobile md:text-page-heading text-white mb-4">
             Ready to see what your gold is worth?
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-body text-white/70">
             Use our calculator for an instant estimate, or request a free posting kit.
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/pricing" variant="gold" size="lg">
+          <div className="hero-cta-pair flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/pricing" variant="primary" size="lg">
               See what yours is worth
             </Button>
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10"
-            >
+            <Button href="/contact" variant="secondary" size="lg">
               Get in touch
             </Button>
           </div>

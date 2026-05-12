@@ -24,11 +24,11 @@ export default function Select({ label, options, error, className, id, ...props 
         <select
           id={selectId}
           className={cn(
-            'min-h-[44px] w-full rounded-lg border border-stone bg-surface px-4 py-3 pr-10 text-body text-charcoal',
-            'focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring',
-            'disabled:bg-stone/30 disabled:cursor-not-allowed disabled:opacity-50',
-            'appearance-none transition-colors duration-200',
-            error && 'border-error focus:border-error focus:ring-error',
+            'w-full px-4 py-3 pr-10 min-h-[44px] rounded-lg border border-border-subtle bg-background text-charcoal text-body',
+            'shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus',
+            'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
+            'transition-[box-shadow,border-color] duration-200 appearance-none',
+            error && 'border-error focus:border-error',
             className
           )}
           aria-invalid={error ? 'true' : undefined}

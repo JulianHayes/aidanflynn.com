@@ -181,7 +181,7 @@ export default function ContactPage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange('message')}
-                        className="placeholder:text-warm-grey/60 min-h-[120px] w-full resize-y rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring disabled:cursor-not-allowed disabled:opacity-50"
+                        className="w-full px-4 py-3 rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus disabled:opacity-50 disabled:cursor-not-allowed transition-[box-shadow,border-color] duration-200 resize-y min-h-[120px]"
                         rows={5}
                         placeholder="How can we help?"
                         required
@@ -194,7 +194,7 @@ export default function ContactPage() {
                         </p>
                       )}
                     </div>
-                    <Button type="submit" variant="gold" disabled={submitting} className="w-full">
+                    <Button type="submit" variant="primary" disabled={submitting} className="w-full">
                       {submitting ? 'Sending...' : 'Send message'}
                     </Button>
                   </form>

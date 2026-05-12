@@ -135,8 +135,8 @@ export default function SellInheritedJewelleryPage() {
             calculator gives you an instant estimate. Or get in touch and we will talk you through
             it.
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/pricing" variant="gold" size="lg">
+          <div className="hero-cta-pair flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/pricing" variant="primary" size="lg">
               See what yours is worth
             </Button>
             <Button href="/contact" variant="secondary" size="lg">

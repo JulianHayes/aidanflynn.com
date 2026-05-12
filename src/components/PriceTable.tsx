@@ -48,9 +48,8 @@ export default function PriceTable({ currency = 'GBP', eurRate = 1.19 }: PriceTa
           ))}
         </tbody>
       </table>
-      <p className="mt-4 text-caption text-warm-grey">
-        Prices last updated:{' '}
-        {new Date().toLocaleString('en-GB', { dateStyle: 'long', timeStyle: 'short' })}
+      <p className="mt-4 text-caption caption-italic text-warm-grey">
+        Prices last updated: {new Date().toLocaleString('en-GB', { dateStyle: 'long', timeStyle: 'short' })}
         {/* TODO: Replace with real-time timestamp from API */}
       </p>
     </div>

@@ -39,8 +39,8 @@ export default function HomePage() {
                 Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland.
                 Transparent pricing. Free insured postage. Same-day payment.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button href="/pricing" variant="gold" size="lg">
+              <div className="hero-cta-pair flex flex-col sm:flex-row gap-4">
+                <Button href="/pricing" variant="primary" size="lg">
                   See what yours is worth
                 </Button>
                 <Button href="/how-it-works" variant="secondary" size="lg">
@@ -130,7 +130,7 @@ export default function HomePage() {
           <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <StaggerItem>
               <Card className="h-full">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-stone bg-cream">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Eye size={22} className="text-navy" />
                 </div>
                 <h3 className="mb-3 font-serif text-lg text-charcoal">Radical transparency</h3>
@@ -142,7 +142,7 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <Card className="h-full">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-stone bg-cream">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Heart size={22} className="text-navy" />
                 </div>
                 <h3 className="mb-3 font-serif text-lg text-charcoal">Your items matter</h3>
@@ -154,7 +154,7 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <Card className="h-full">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-stone bg-cream">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <User size={22} className="text-navy" />
                 </div>
                 <h3 className="mb-3 font-serif text-lg text-charcoal">
@@ -217,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative overflow-hidden bg-navy py-section-mobile md:py-section">
+      <section className="bg-navy-deep py-section-mobile md:py-section relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,169,110,0.08)_0%,_transparent_60%)]" />
         <div className="relative mx-auto max-w-content px-6 text-center md:px-12 lg:px-20">
           <AnimatedSection>
@@ -227,7 +227,7 @@ export default function HomePage() {
             <p className="mx-auto mb-8 max-w-xl text-body text-white/70">
               Free insured postage. No obligation. Free returns if you change your mind.
             </p>
-            <Button href="/contact" variant="gold" size="lg">
+            <Button href="/contact" variant="primary" size="lg">
               Get your free posting kit
             </Button>
           </AnimatedSection>

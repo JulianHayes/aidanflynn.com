@@ -110,7 +110,7 @@ export default function DublinPage() {
                         aria-label="Email address"
                       />
                     </div>
-                    <Button type="submit" variant="gold" size="sm" className="mt-1 self-start">
+                    <Button type="submit" variant="primary" size="sm" className="self-start mt-1">
                       Notify me
                     </Button>
                   </form>
@@ -121,7 +121,7 @@ export default function DublinPage() {
             <div>
               <GoldPriceCalculator />
               <div className="mt-6 text-center">
-                <Button href="/contact" variant="gold" size="lg" className="w-full">
+                <Button href="/contact" variant="primary" size="lg" className="w-full">
                   Use our postal service
                 </Button>
                 <p className="mt-3 text-small text-warm-grey">

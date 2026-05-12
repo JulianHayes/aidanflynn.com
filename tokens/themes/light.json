@@ -17,13 +17,14 @@
       "sys.color.border.subtle": "rgba(14, 26, 20, 0.06)",
       "sys.color.border.default": "rgba(14, 26, 20, 0.10)",
 
-      "sys.color.brand.primary": "{ref.color.green.700}",
-      "sys.color.brand.secondary": "{ref.color.green.600}",
-      "sys.color.brand.accent": "{ref.color.green.350}",
+      "sys.color.brand.primary": "{ref.color.green.750}",
+      "sys.color.brand.secondary": "{ref.color.green.700}",
+      "sys.color.brand.accent": "{ref.color.green.700}",
+      "sys.color.brand.deep": "{ref.color.green.deep}",
 
-      "sys.color.action.primaryBg": "{ref.color.green.700}",
+      "sys.color.action.primaryBg": "{ref.color.green.750}",
       "sys.color.action.primaryText": "{ref.color.neutral.0}",
-      "sys.color.action.primaryHover": "{ref.color.green.600}",
+      "sys.color.action.primaryHover": "{ref.color.green.700}",
       "sys.color.action.secondaryBg": "{ref.color.neutral.200}",
       "sys.color.action.secondaryText": "{ref.color.text.dark-primary}",
 
@@ -35,7 +36,7 @@
       "sys.color.state.warning": "{ref.color.state.warning}",
       "sys.color.state.error": "{ref.color.state.error}",
 
-      "sys.color.focus.ring": "rgba(74, 199, 145, 0.35)"
+      "sys.color.focus.ring": "rgba(23, 70, 52, 0.35)"
     }
   }
 }

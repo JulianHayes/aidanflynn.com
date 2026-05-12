@@ -18,12 +18,12 @@ export default function Input({ label, error, helperText, className, id, ...prop
       <input
         id={inputId}
         className={cn(
-          'min-h-[44px] w-full rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal',
+          'w-full px-4 py-3 min-h-[44px] rounded-lg border border-border-subtle bg-background text-charcoal text-body',
           'placeholder:text-warm-grey/60',
-          'focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring',
-          'disabled:bg-stone/30 disabled:cursor-not-allowed disabled:opacity-50',
-          'transition-colors duration-200',
-          error && 'border-error focus:border-error focus:ring-error',
+          'shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus',
+          'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
+          'transition-[box-shadow,border-color] duration-200',
+          error && 'border-error focus:border-error',
           className
         )}
         aria-invalid={error ? 'true' : undefined}

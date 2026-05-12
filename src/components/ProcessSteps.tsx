@@ -48,14 +48,15 @@ export default function ProcessSteps({ className, variant = 'compact' }: Process
           {index < steps.length - 1 && (
             <div className="absolute left-[calc(50%+32px)] top-8 hidden h-px w-[calc(100%-64px)] bg-stone lg:block" />
           )}
-          <div className={cn('text-center', variant === 'detailed' && 'text-left')}>
-            <div
-              className={cn(
-                'mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full border border-stone bg-cream',
-                variant === 'detailed' && 'mb-6'
-              )}
-            >
-              <step.icon size={24} className="text-navy" />
+          <div className={cn(
+            'text-center',
+            variant === 'detailed' && 'text-left'
+          )}>
+            <div className={cn(
+              'inline-flex items-center justify-center w-16 h-16 rounded-full bg-background border border-border-subtle text-navy shadow-elev-chip-inset mb-4',
+              variant === 'detailed' && 'mb-6'
+            )}>
+              <step.icon size={24} />
             </div>
             <div className="mb-2 text-caption font-medium uppercase tracking-wider text-gold">
               Step {index + 1}

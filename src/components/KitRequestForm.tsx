@@ -118,12 +118,12 @@ export default function KitRequestForm() {
           id="items"
           value={formData.items}
           onChange={handleChange('items')}
-          className="placeholder:text-warm-grey/60 min-h-[100px] w-full resize-y rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring"
+          className="w-full px-4 py-3 rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus transition-[box-shadow,border-color] duration-200 resize-y min-h-[100px]"
           rows={4}
           placeholder="Describe what you would like to sell (e.g., gold rings, silver bracelet, etc.)"
         />
       </div>
-      <Button type="submit" variant="gold" disabled={submitting} className="w-full md:w-auto">
+      <Button type="submit" variant="primary" disabled={submitting} className="w-full md:w-auto">
         {submitting ? 'Sending...' : 'Request your free kit'}
       </Button>
       <p className="text-small text-warm-grey">
