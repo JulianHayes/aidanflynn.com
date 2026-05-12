@@ -37,34 +37,34 @@ export default function MobileMenu() {
     <div className="lg:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2.5 min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-navy"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2.5 text-navy"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {isOpen && mounted && createPortal(
-        <div
-          className="fixed top-16 md:top-20 left-0 right-0 bottom-0 bg-surface overflow-y-auto shadow-lg border-t border-stone lg:hidden z-[9999]"
-        >
-          <div className="flex flex-col p-6 gap-1">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'block py-3 px-4 rounded-lg text-lg font-sans font-medium transition-colors',
-                  pathname === item.href
-                    ? 'text-navy bg-cream'
-                    : 'text-warm-grey hover:text-navy hover:bg-cream'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+      {isOpen &&
+        mounted &&
+        createPortal(
+          <div className="fixed bottom-0 left-0 right-0 top-16 z-[9999] overflow-y-auto border-t border-stone bg-surface shadow-lg md:top-20 lg:hidden">
+            <div className="flex flex-col gap-1 p-6">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'block rounded-lg px-4 py-3 font-sans text-lg font-medium transition-colors',
+                    pathname === item.href
+                      ? 'bg-cream text-navy'
+                      : 'text-warm-grey hover:bg-cream hover:text-navy'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-            <hr className="my-4 border-stone" />
+              <hr className="my-4 border-stone" />
 
             <a
               href={`tel:${CONTACT.phone}`}
@@ -85,10 +85,9 @@ export default function MobileMenu() {
                 Get Your Free Kit
               </Button>
             </div>
-          </div>
-        </div>,
-        document.body
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   )
 }

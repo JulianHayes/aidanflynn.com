@@ -13,7 +13,7 @@ export default function Input({ label, error, helperText, className, id, ...prop
     <div className="space-y-1">
       <label htmlFor={inputId} className="block text-small font-medium text-charcoal">
         {label}
-        {props.required && <span className="text-error ml-1">*</span>}
+        {props.required && <span className="ml-1 text-error">*</span>}
       </label>
       <input
         id={inputId}

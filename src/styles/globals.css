@@ -15,14 +15,21 @@
       scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
     color: var(--color-text-primary);
   }
@@ -35,7 +42,7 @@
 
 @layer components {
   .skip-to-content {
-    @apply absolute -top-10 left-4 z-50 px-4 py-2 rounded-lg transition-all duration-200;
+    @apply absolute -top-10 left-4 z-50 rounded-lg px-4 py-2 transition-all duration-200;
     background: var(--color-action-primary-bg);
     color: var(--color-action-primary-text);
   }

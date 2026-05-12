@@ -54,21 +54,21 @@ export default function KitRequestForm() {
     setSubmitting(false)
   }
 
-  const handleChange = (field: keyof FormData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
-    if (errors[field as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }))
+  const handleChange =
+    (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+      if (errors[field as keyof FormErrors]) {
+        setErrors((prev) => ({ ...prev, [field]: undefined }))
+      }
     }
-  }
 
   if (submitted) {
     return (
-      <div className="text-center py-12 px-6 bg-success/5 rounded-card border border-success/20">
-        <h3 className="font-serif text-xl text-charcoal mb-3">Your kit is on its way</h3>
+      <div className="bg-success/5 border-success/20 rounded-card border px-6 py-12 text-center">
+        <h3 className="mb-3 font-serif text-xl text-charcoal">Your kit is on its way</h3>
         <p className="text-body text-warm-grey">
-          We will send your free insured posting kit within 24 hours. Check your email for confirmation and tracking details.
+          We will send your free insured posting kit within 24 hours. Check your email for
+          confirmation and tracking details.
         </p>
       </div>
     )
@@ -84,7 +84,7 @@ export default function KitRequestForm() {
         required
         placeholder="Your full name"
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Input
           label="Email"
           type="email"

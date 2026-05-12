@@ -37,16 +37,14 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Brand />
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   'relative font-sans text-small font-medium uppercase tracking-wider transition-colors duration-200',
-                  pathname === item.href
-                    ? 'text-navy'
-                    : 'text-warm-grey hover:text-navy'
+                  pathname === item.href ? 'text-navy' : 'text-warm-grey hover:text-navy'
                 )}
               >
                 {item.label}
@@ -61,7 +59,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden items-center gap-6 lg:flex">
             <a
               href={`tel:${CONTACT.phone}`}
               className="group flex items-center gap-2 text-small font-medium text-warm-grey hover:text-navy transition-colors"

@@ -14,7 +14,8 @@ import { Eye, Heart, User } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Aidan Flynn | Sell Gold, Silver & Platinum \u2014 UK & Ireland',
-  description: 'Sell your gold, silver, and platinum with Aidan Flynn. Transparent pricing published online. Free insured postage. Same-day payment. Serving Brighton, Belfast, and Dublin.',
+  description:
+    'Sell your gold, silver, and platinum with Aidan Flynn. Transparent pricing published online. Free insured postage. Same-day payment. Serving Brighton, Belfast, and Dublin.',
   openGraph: {
     title: 'Aidan Flynn | Sell Gold, Silver & Platinum \u2014 UK & Ireland',
     description: 'Transparent precious metals buying. Free insured postage. Same-day payment.',
@@ -25,17 +26,18 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream relative overflow-hidden">
+      <section className="relative overflow-hidden bg-cream">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,110,0.06)_0%,_transparent_60%)]" />
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28 lg:py-36 relative">
+        <div className="relative mx-auto max-w-content px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-36">
           <AnimatedSection direction="none">
             <div className="max-w-3xl">
-              <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6 leading-tight">
+              <h1 className="mb-6 font-serif text-hero-mobile leading-tight text-charcoal md:text-hero">
                 Your gold is worth more than you think.
                 <AnimatedHeadline />
               </h1>
-              <p className="text-body md:text-subheading text-warm-grey mb-10 max-w-2xl">
-                Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.
+              <p className="mb-10 max-w-2xl text-body text-warm-grey md:text-subheading">
+                Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland.
+                Transparent pricing. Free insured postage. Same-day payment.
               </p>
               <div className="hero-cta-pair flex flex-col sm:flex-row gap-4">
                 <Button href="/pricing" variant="primary" size="lg">
@@ -55,12 +57,15 @@ export default function HomePage() {
 
       {/* How It Works */}
       <section className="bg-cream py-section-mobile md:py-section" aria-labelledby="how-it-works">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <AnimatedSection>
-            <h2 id="how-it-works" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-4">
+            <h2
+              id="how-it-works"
+              className="mb-4 text-center font-serif text-page-heading-mobile text-charcoal md:text-page-heading"
+            >
               How it works
             </h2>
-            <p className="text-body text-warm-grey text-center mb-12 max-w-xl mx-auto">
+            <p className="mx-auto mb-12 max-w-xl text-center text-body text-warm-grey">
               Four simple steps from estimate to payment. No surprises, no pressure.
             </p>
           </AnimatedSection>
@@ -71,23 +76,30 @@ export default function HomePage() {
       </section>
 
       {/* Price Calculator Preview */}
-      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="pricing-preview">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <section
+        className="bg-surface py-section-mobile md:py-section"
+        aria-labelledby="pricing-preview"
+      >
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <AnimatedSection>
-            <div className="text-center mb-10">
-              <h2 id="pricing-preview" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal mb-4">
+            <div className="mb-10 text-center">
+              <h2
+                id="pricing-preview"
+                className="mb-4 font-serif text-page-heading-mobile text-charcoal md:text-page-heading"
+              >
                 See exactly what we pay
               </h2>
-              <p className="text-body text-warm-grey max-w-2xl mx-auto">
-                We publish our rates because we think you deserve to know. Updated every 60 seconds during market hours.
+              <p className="mx-auto max-w-2xl text-body text-warm-grey">
+                We publish our rates because we think you deserve to know. Updated every 60 seconds
+                during market hours.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
             <AnimatedSection direction="left">
               <Card>
-                <h3 className="font-serif text-xl text-charcoal mb-4">Current rates per gram</h3>
+                <h3 className="mb-4 font-serif text-xl text-charcoal">Current rates per gram</h3>
                 <PriceTable />
               </Card>
             </AnimatedSection>
@@ -96,7 +108,7 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection className="text-center mt-8">
+          <AnimatedSection className="mt-8 text-center">
             <Button href="/pricing" variant="secondary">
               Use the full calculator
             </Button>
@@ -106,21 +118,25 @@ export default function HomePage() {
 
       {/* Why People Choose Aidan Flynn */}
       <section className="bg-cream py-section-mobile md:py-section" aria-labelledby="why-choose">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <AnimatedSection>
-            <h2 id="why-choose" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">
+            <h2
+              id="why-choose"
+              className="mb-12 text-center font-serif text-page-heading-mobile text-charcoal md:text-page-heading"
+            >
               Why people choose Aidan Flynn
             </h2>
           </AnimatedSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <StaggerItem>
               <Card className="h-full">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Eye size={22} className="text-navy" />
                 </div>
-                <h3 className="font-serif text-lg text-charcoal mb-3">Radical transparency</h3>
+                <h3 className="mb-3 font-serif text-lg text-charcoal">Radical transparency</h3>
                 <p className="text-small text-warm-grey">
-                  We publish exactly what we pay, per gram, per carat. No surprises. No hidden fees. The price you see on our site is the price you get.
+                  We publish exactly what we pay, per gram, per carat. No surprises. No hidden fees.
+                  The price you see on our site is the price you get.
                 </p>
               </Card>
             </StaggerItem>
@@ -129,9 +145,10 @@ export default function HomePage() {
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <Heart size={22} className="text-navy" />
                 </div>
-                <h3 className="font-serif text-lg text-charcoal mb-3">Your items matter</h3>
+                <h3 className="mb-3 font-serif text-lg text-charcoal">Your items matter</h3>
                 <p className="text-small text-warm-grey">
-                  Some of what we receive carries real history. We handle everything with care, not just efficiency. Every item is treated with the respect it deserves.
+                  Some of what we receive carries real history. We handle everything with care, not
+                  just efficiency. Every item is treated with the respect it deserves.
                 </p>
               </Card>
             </StaggerItem>
@@ -140,9 +157,12 @@ export default function HomePage() {
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border-subtle shadow-elev-chip-inset mb-4">
                   <User size={22} className="text-navy" />
                 </div>
-                <h3 className="font-serif text-lg text-charcoal mb-3">A real person, not a PO box</h3>
+                <h3 className="mb-3 font-serif text-lg text-charcoal">
+                  A real person, not a PO box
+                </h3>
                 <p className="text-small text-warm-grey">
-                  My name is on this business. If something goes wrong, you know who to find. That accountability is the foundation of everything we do.
+                  My name is on this business. If something goes wrong, you know who to find. That
+                  accountability is the foundation of everything we do.
                 </p>
               </Card>
             </StaggerItem>
@@ -151,14 +171,20 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-surface py-section-mobile md:py-section" aria-labelledby="testimonials">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <section
+        className="bg-surface py-section-mobile md:py-section"
+        aria-labelledby="testimonials"
+      >
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <AnimatedSection>
-            <h2 id="testimonials" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">
+            <h2
+              id="testimonials"
+              className="mb-12 text-center font-serif text-page-heading-mobile text-charcoal md:text-page-heading"
+            >
               What our customers say
             </h2>
           </AnimatedSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {TESTIMONIALS.map((testimonial) => (
               <StaggerItem key={testimonial.name}>
                 <TestimonialCard {...testimonial} />
@@ -171,13 +197,16 @@ export default function HomePage() {
 
       {/* Locations */}
       <section className="bg-cream py-section-mobile md:py-section" aria-labelledby="locations">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <AnimatedSection>
-            <h2 id="locations" className="font-serif text-page-heading-mobile md:text-page-heading text-charcoal text-center mb-12">
+            <h2
+              id="locations"
+              className="mb-12 text-center font-serif text-page-heading-mobile text-charcoal md:text-page-heading"
+            >
               Our locations
             </h2>
           </AnimatedSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {LOCATIONS.map((location) => (
               <StaggerItem key={location.slug}>
                 <LocationCard {...location} />
@@ -190,12 +219,12 @@ export default function HomePage() {
       {/* Final CTA */}
       <section className="bg-navy-deep py-section-mobile md:py-section relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,169,110,0.08)_0%,_transparent_60%)]" />
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20 text-center relative">
+        <div className="relative mx-auto max-w-content px-6 text-center md:px-12 lg:px-20">
           <AnimatedSection>
-            <h2 className="font-serif text-page-heading-mobile md:text-page-heading text-white mb-4">
+            <h2 className="mb-4 font-serif text-page-heading-mobile text-white md:text-page-heading">
               Ready to find out what your gold is worth?
             </h2>
-            <p className="text-body text-white/70 mb-8 max-w-xl mx-auto">
+            <p className="mx-auto mb-8 max-w-xl text-body text-white/70">
               Free insured postage. No obligation. Free returns if you change your mind.
             </p>
             <Button href="/contact" variant="primary" size="lg">
@@ -213,7 +242,8 @@ export default function HomePage() {
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             name: 'Aidan Flynn',
-            description: 'Precious metals buyer serving the UK and Ireland. Transparent pricing, free insured postage, same-day payment.',
+            description:
+              'Precious metals buyer serving the UK and Ireland. Transparent pricing, free insured postage, same-day payment.',
             url: 'https://aidanflynn.com',
             telephone: '+441234567890',
             email: 'hello@aidanflynn.com',
@@ -223,17 +253,34 @@ export default function HomePage() {
               {
                 '@type': 'Place',
                 name: 'Aidan Flynn Brighton',
-                address: { '@type': 'PostalAddress', streetAddress: '14 The Lanes', addressLocality: 'Brighton', postalCode: 'BN1 1HB', addressCountry: 'GB' },
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '14 The Lanes',
+                  addressLocality: 'Brighton',
+                  postalCode: 'BN1 1HB',
+                  addressCountry: 'GB',
+                },
               },
               {
                 '@type': 'Place',
                 name: 'Aidan Flynn Belfast',
-                address: { '@type': 'PostalAddress', streetAddress: '22 Royal Avenue', addressLocality: 'Belfast', postalCode: 'BT1 1DA', addressCountry: 'GB' },
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '22 Royal Avenue',
+                  addressLocality: 'Belfast',
+                  postalCode: 'BT1 1DA',
+                  addressCountry: 'GB',
+                },
               },
               {
                 '@type': 'Place',
                 name: 'Aidan Flynn Dublin',
-                address: { '@type': 'PostalAddress', streetAddress: 'Grafton Street', addressLocality: 'Dublin', addressCountry: 'IE' },
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Grafton Street',
+                  addressLocality: 'Dublin',
+                  addressCountry: 'IE',
+                },
               },
             ],
           }),

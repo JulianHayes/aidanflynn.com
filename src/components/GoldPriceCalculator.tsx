@@ -8,8 +8,7 @@ import {
   METAL_OPTIONS,
   CARAT_OPTIONS,
 } from '@/lib/constants'
-import { formatCurrency } from '@/lib/utils'
-import { cn } from '@/lib/utils'
+import { cn, formatCurrency } from '@/lib/utils'
 
 type MetalType = 'gold' | 'silver' | 'platinum'
 type Currency = 'GBP' | 'EUR'
@@ -49,7 +48,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
     if (spotPrice === undefined || buyPct === undefined) return null
 
     const rawAmount = weightNum * spotPrice * buyPct
-    const convert = (amount: number) => currency === 'EUR' ? amount * EUR_CONVERSION_RATE : amount
+    const convert = (amount: number) => (currency === 'EUR' ? amount * EUR_CONVERSION_RATE : amount)
 
     return {
       spotPricePerGram: convert(spotPrice),
@@ -63,7 +62,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
     <div className={cn('bg-surface rounded-[14px] border border-border-subtle shadow-elev-card', className)}>
       <div className={cn(compact ? 'p-6' : 'p-6 md:p-8')}>
         {!compact && (
-          <h3 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+          <h3 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
             Gold price calculator
           </h3>
         )}
@@ -81,7 +80,9 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               className={fieldClass}
             >
               {METAL_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
               ))}
             </select>
           </div>
@@ -98,7 +99,9 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               className={fieldClass}
             >
               {caratOptions.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
               ))}
             </select>
           </div>
@@ -158,15 +161,21 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               <div className="mt-4 space-y-2 text-small text-warm-grey">
                 <div className="flex justify-between">
                   <span>Spot price per gram ({carat})</span>
-                  <span className="text-charcoal">{formatCurrency(calculation.spotPricePerGram, currency)}</span>
+                  <span className="text-charcoal">
+                    {formatCurrency(calculation.spotPricePerGram, currency)}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>We pay</span>
-                  <span className="text-charcoal">{Math.round(calculation.buyPercentage * 100)}% of spot</span>
+                  <span className="text-charcoal">
+                    {Math.round(calculation.buyPercentage * 100)}% of spot
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Our rate per gram</span>
-                  <span className="text-charcoal">{formatCurrency(calculation.wePayPerGram, currency)}</span>
+                  <span className="text-charcoal">
+                    {formatCurrency(calculation.wePayPerGram, currency)}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Weight</span>
@@ -175,7 +184,7 @@ export default function GoldPriceCalculator({ className, compact = false }: Gold
               </div>
             </div>
           ) : (
-            <div className="text-center py-4">
+            <div className="py-4 text-center">
               <p className="text-body text-warm-grey">
                 Enter the weight of your items to see an estimate
               </p>
