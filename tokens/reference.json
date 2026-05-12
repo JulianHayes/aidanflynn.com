@@ -43,8 +43,7 @@
     },
     "font": {
       "serif": "\"PT Serif\", Georgia, serif",
-      "sans": "\"PT Sans\", system-ui, sans-serif",
-      "caption": "\"PT Serif Caption\", \"PT Serif\", Georgia, serif"
+      "sans": "\"PT Sans\", system-ui, sans-serif"
     },
     "space": {
       "2": "0.125rem",

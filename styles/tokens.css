@@ -1,7 +1,6 @@
 :root {
   --font-heading: "PT Serif", Georgia, serif;
   --font-body: "PT Sans", system-ui, sans-serif;
-  --font-caption: "PT Serif Caption", "PT Serif", Georgia, serif;
 
   --type-display-size: clamp(2.25rem, 4.5vw, 3.75rem);
   --type-display-line-height: 1.08;
