@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     default: 'Aidan Flynn | Precious Metals Buyer — UK & Ireland',
     template: '%s | Aidan Flynn',
   },
-  description: 'Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.',
+  description:
+    'Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.',
   metadataBase: new URL('https://aidanflynn.com'),
   openGraph: {
     type: 'website',
@@ -17,11 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
@@ -38,9 +35,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Navigation />
-        <main id="main-content">
-          {children}
-        </main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Phone } from 'lucide-react'
 import { NAV_ITEMS, CONTACT } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import Button from '@/components/ui/Button'
 import ThemeToggle from '@/components/ui/ThemeToggle'
+import Brand from './Brand'
 import MobileMenu from './MobileMenu'
 
 export default function Navigation() {
@@ -30,39 +29,22 @@ export default function Navigation() {
       className={cn(
         'sticky top-0 z-40 transition-all duration-300',
         scrolled
-          ? 'bg-surface backdrop-blur-md shadow-card border-b border-stone'
+          ? 'bg-surface backdrop-blur-md border-b border-stone'
           : 'bg-surface backdrop-blur-sm border-b border-stone'
       )}
     >
       <nav className="max-w-content mx-auto px-6 md:px-12 lg:px-20" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-3" aria-label="Aidan Flynn \u2014 Home">
-            <Image
-              src="/images/logo-mark.svg"
-              alt=""
-              width={30}
-              height={23}
-              className="h-6 w-auto text-navy"
-            />
-            <Image
-              src="/images/logo-wordmark.svg"
-              alt="Aidan Flynn"
-              width={160}
-              height={16}
-              className="hidden sm:block h-4 w-auto"
-            />
-          </Link>
+          <Brand />
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   'relative font-sans text-small font-medium uppercase tracking-wider transition-colors duration-200',
-                  pathname === item.href
-                    ? 'text-navy'
-                    : 'text-warm-grey hover:text-navy'
+                  pathname === item.href ? 'text-navy' : 'text-warm-grey hover:text-navy'
                 )}
               >
                 {item.label}
@@ -77,16 +59,22 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden items-center gap-6 lg:flex">
             <a
               href={`tel:${CONTACT.phone}`}
-              className="flex items-center gap-2 text-small font-medium text-warm-grey hover:text-navy transition-colors"
+              className="group flex items-center gap-2 text-small font-medium text-warm-grey hover:text-navy transition-colors"
             >
-              <Phone size={16} />
+              <span className="phone-ic">
+                <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="0.75" y="0.75" width="12.5" height="18.5" rx="2.25" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                  <path d="M5.2 2.6 H8.8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                  <circle cx="7" cy="16.6" r="0.9" fill="currentColor" />
+                </svg>
+              </span>
               {CONTACT.phoneDisplay}
             </a>
             <ThemeToggle />
-            <Button href="/contact" variant="gold" size="sm">
+            <Button href="/contact" variant="primary" size="sm">
               Get Your Free Kit
             </Button>
           </div>

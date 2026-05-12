@@ -11,32 +11,32 @@ export async function GET() {
     currency: 'GBP',
     spotPrices: {
       gold: {
-        '24ct': { perGram: 105.00, perOz: 3265.63 },
+        '24ct': { perGram: 105.0, perOz: 3265.63 },
         '22ct': { perGram: 96.44, perOz: 2999.43 },
         '18ct': { perGram: 78.96, perOz: 2455.69 },
         '14ct': { perGram: 61.59, perOz: 1915.41 },
-        '9ct': { perGram: 39.48, perOz: 1228.00 },
+        '9ct': { perGram: 39.48, perOz: 1228.0 },
       },
       silver: {
         '999': { perGram: 1.65, perOz: 51.32 },
       },
       platinum: {
-        '999': { perGram: 25.00, perOz: 777.59 },
+        '999': { perGram: 25.0, perOz: 777.59 },
       },
     },
     buyPercentages: {
       gold: {
-        '24ct': 0.90,
+        '24ct': 0.9,
         '22ct': 0.88,
         '18ct': 0.85,
         '14ct': 0.82,
-        '9ct': 0.80,
+        '9ct': 0.8,
       },
       silver: {
         '999': 0.75,
       },
       platinum: {
-        '999': 0.80,
+        '999': 0.8,
       },
     },
     eurRate: 1.19,

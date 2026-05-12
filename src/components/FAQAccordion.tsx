@@ -38,7 +38,7 @@ export default function FAQAccordion({ sections, className }: FAQAccordionProps)
     <div className={cn('space-y-12', className)}>
       {sections.map((section, sectionIndex) => (
         <div key={section.title}>
-          <h2 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+          <h2 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
             {section.title}
           </h2>
           <div className="space-y-0 border-t border-stone">
@@ -51,7 +51,7 @@ export default function FAQAccordion({ sections, className }: FAQAccordionProps)
                   <h3>
                     <button
                       onClick={() => toggleItem(id)}
-                      className="flex items-center justify-between w-full py-5 text-left text-body font-medium text-charcoal hover:text-navy transition-colors"
+                      className="flex w-full items-center justify-between py-5 text-left text-body font-medium text-charcoal transition-colors hover:text-navy"
                       aria-expanded={isOpen}
                       aria-controls={`${id}-content`}
                       id={`${id}-trigger`}
@@ -75,9 +75,7 @@ export default function FAQAccordion({ sections, className }: FAQAccordionProps)
                       isOpen ? 'max-h-96 pb-5' : 'max-h-0'
                     )}
                   >
-                    <p className="text-body text-warm-grey pr-8">
-                      {item.answer}
-                    </p>
+                    <p className="pr-8 text-body text-warm-grey">{item.answer}</p>
                   </div>
                 </div>
               )

@@ -52,26 +52,27 @@ export default function ContactPage() {
     setSubmitting(false)
   }
 
-  const handleChange = (field: keyof ContactFormData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
-    if (errors[field as keyof ContactFormErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }))
+  const handleChange =
+    (field: keyof ContactFormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+      if (errors[field as keyof ContactFormErrors]) {
+        setErrors((prev) => ({ ...prev, [field]: undefined }))
+      }
     }
-  }
 
   return (
     <>
       {/* Hero */}
       <section className="bg-cream py-16 md:py-24">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
           <div className="max-w-2xl">
-            <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6">
+            <h1 className="mb-6 font-serif text-hero-mobile text-charcoal md:text-hero">
               Get in touch
             </h1>
-            <p className="text-body md:text-subheading text-warm-grey">
-              Whether you have a question, want to request a free posting kit, or just want to say hello — we are here.
+            <p className="text-body text-warm-grey md:text-subheading">
+              Whether you have a question, want to request a free posting kit, or just want to say
+              hello — we are here.
             </p>
           </div>
         </div>
@@ -79,25 +80,31 @@ export default function ContactPage() {
 
       {/* Contact Details + Form */}
       <section className="bg-surface py-section-mobile md:py-section">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+                <h2 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
                   Contact details
                 </h2>
                 <div className="space-y-4">
-                  <a href={`tel:${CONTACT.phone}`} className="flex items-center gap-3 text-body text-warm-grey hover:text-navy transition-colors">
-                    <Phone size={20} className="text-navy flex-shrink-0" />
+                  <a
+                    href={`tel:${CONTACT.phone}`}
+                    className="flex items-center gap-3 text-body text-warm-grey transition-colors hover:text-navy"
+                  >
+                    <Phone size={20} className="flex-shrink-0 text-navy" />
                     {CONTACT.phoneDisplay}
                   </a>
-                  <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-body text-warm-grey hover:text-navy transition-colors">
-                    <Mail size={20} className="text-navy flex-shrink-0" />
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    className="flex items-center gap-3 text-body text-warm-grey transition-colors hover:text-navy"
+                  >
+                    <Mail size={20} className="flex-shrink-0 text-navy" />
                     {CONTACT.email}
                   </a>
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <Clock size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <Clock size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Opening hours</p>
                       <p>Monday – Friday: 9am – 5pm</p>
@@ -110,11 +117,11 @@ export default function ContactPage() {
 
               {/* Locations */}
               <div>
-                <h3 className="font-serif text-xl text-charcoal mb-4">Our locations</h3>
+                <h3 className="mb-4 font-serif text-xl text-charcoal">Our locations</h3>
                 <div className="space-y-4">
-                  {LOCATIONS.filter(l => !l.comingSoon).map((loc) => (
+                  {LOCATIONS.filter((l) => !l.comingSoon).map((loc) => (
                     <div key={loc.slug} className="flex items-start gap-3 text-body text-warm-grey">
-                      <MapPin size={20} className="text-navy flex-shrink-0 mt-1" />
+                      <MapPin size={20} className="mt-1 flex-shrink-0 text-navy" />
                       <div>
                         <p className="font-medium text-charcoal">{loc.city}</p>
                         <p>{loc.address}</p>
@@ -126,20 +133,20 @@ export default function ContactPage() {
               </div>
 
               {/* Map Placeholder */}
-              <div className="aspect-video bg-stone rounded-card flex items-center justify-center">
-                <p className="text-warm-grey text-small">Map embed placeholder</p>
+              <div className="flex aspect-video items-center justify-center rounded-card bg-stone">
+                <p className="text-small text-warm-grey">Map embed placeholder</p>
               </div>
             </div>
 
             {/* Contact Form */}
             <div>
               <Card>
-                <h2 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+                <h2 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
                   Send us a message
                 </h2>
                 {submitted ? (
-                  <div className="text-center py-8">
-                    <h3 className="font-serif text-xl text-charcoal mb-3">Message sent</h3>
+                  <div className="py-8 text-center">
+                    <h3 className="mb-3 font-serif text-xl text-charcoal">Message sent</h3>
                     <p className="text-body text-warm-grey">
                       Thank you for getting in touch. We will reply within one working day.
                     </p>
@@ -164,14 +171,17 @@ export default function ContactPage() {
                       placeholder="you@example.com"
                     />
                     <div className="space-y-1">
-                      <label htmlFor="message" className="block text-small font-medium text-charcoal">
+                      <label
+                        htmlFor="message"
+                        className="block text-small font-medium text-charcoal"
+                      >
                         Message <span className="text-error">*</span>
                       </label>
                       <textarea
                         id="message"
                         value={formData.message}
                         onChange={handleChange('message')}
-                        className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 resize-y min-h-[120px]"
+                        className="w-full px-4 py-3 rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus disabled:opacity-50 disabled:cursor-not-allowed transition-[box-shadow,border-color] duration-200 resize-y min-h-[120px]"
                         rows={5}
                         placeholder="How can we help?"
                         required
@@ -179,10 +189,12 @@ export default function ContactPage() {
                         aria-describedby={errors.message ? 'message-error' : undefined}
                       />
                       {errors.message && (
-                        <p id="message-error" className="text-small text-error" role="alert">{errors.message}</p>
+                        <p id="message-error" className="text-small text-error" role="alert">
+                          {errors.message}
+                        </p>
                       )}
                     </div>
-                    <Button type="submit" variant="gold" disabled={submitting} className="w-full">
+                    <Button type="submit" variant="primary" disabled={submitting} className="w-full">
                       {submitting ? 'Sending...' : 'Send message'}
                     </Button>
                   </form>

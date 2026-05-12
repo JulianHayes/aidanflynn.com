@@ -6,7 +6,8 @@ import TrustBar from '@/components/TrustBar'
 
 export const metadata: Metadata = {
   title: 'Belfast — Sell Gold in Belfast & Northern Ireland',
-  description: 'Sell your gold, silver, and platinum in Belfast. Visit Aidan Flynn on Royal Avenue or use our free insured postal service. Same-day payment, transparent pricing.',
+  description:
+    'Sell your gold, silver, and platinum in Belfast. Visit Aidan Flynn on Royal Avenue or use our free insured postal service. Same-day payment, transparent pricing.',
   openGraph: {
     title: 'Sell Gold in Belfast | Aidan Flynn',
     description: 'Visit us on Royal Avenue, Belfast. Transparent pricing, same-day payment.',
@@ -17,12 +18,11 @@ export default function BelfastPage() {
   return (
     <>
       <section className="bg-cream py-16 md:py-24">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal mb-6">
-            Belfast
-          </h1>
-          <p className="text-body md:text-subheading text-warm-grey max-w-2xl">
-            Serving Belfast and all of Northern Ireland. Visit us on Royal Avenue or use our free insured postal service.
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
+          <h1 className="mb-6 font-serif text-hero-mobile text-charcoal md:text-hero">Belfast</h1>
+          <p className="max-w-2xl text-body text-warm-grey md:text-subheading">
+            Serving Belfast and all of Northern Ireland. Visit us on Royal Avenue or use our free
+            insured postal service.
           </p>
         </div>
       </section>
@@ -30,30 +30,30 @@ export default function BelfastPage() {
       <TrustBar />
 
       <section className="bg-surface py-section-mobile md:py-section">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h2 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+                <h2 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
                   Visit us
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <MapPin size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <MapPin size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Address</p>
                       <p>22 Royal Avenue, Belfast, BT1 1DA</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <Phone size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <Phone size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Phone</p>
                       <p>028 9012 3456</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <Clock size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <Clock size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Opening hours</p>
                       <p>Monday – Friday: 9am – 5pm</p>
@@ -62,34 +62,41 @@ export default function BelfastPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <Bus size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <Bus size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Getting here</p>
-                      <p>Located on Royal Avenue in Belfast city centre, a short walk from City Hall and the Cathedral Quarter. Well served by Metro bus routes.</p>
+                      <p>
+                        Located on Royal Avenue in Belfast city centre, a short walk from City Hall
+                        and the Cathedral Quarter. Well served by Metro bus routes.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-serif text-xl text-charcoal mb-3">About our Belfast location</h3>
+                <h3 className="mb-3 font-serif text-xl text-charcoal">
+                  About our Belfast location
+                </h3>
                 <p className="text-body text-warm-grey">
-                  Our Belfast office serves customers across Northern Ireland. Whether you are local to the city or posting from further afield, we offer the same transparent pricing and personal service. Walk-ins are welcome during opening hours.
+                  Our Belfast office serves customers across Northern Ireland. Whether you are local
+                  to the city or posting from further afield, we offer the same transparent pricing
+                  and personal service. Walk-ins are welcome during opening hours.
                 </p>
-                <p className="text-small text-warm-grey mt-3">
+                <p className="mt-3 text-small text-warm-grey">
                   Serving Belfast and Northern Ireland.
                 </p>
               </div>
 
-              <div className="aspect-video bg-stone rounded-card flex items-center justify-center">
-                <p className="text-warm-grey text-small">Map embed placeholder</p>
+              <div className="flex aspect-video items-center justify-center rounded-card bg-stone">
+                <p className="text-small text-warm-grey">Map embed placeholder</p>
               </div>
             </div>
 
             <div>
               <GoldPriceCalculator />
               <div className="mt-6 text-center">
-                <Button href="/contact" variant="gold" size="lg" className="w-full">
+                <Button href="/contact" variant="primary" size="lg" className="w-full">
                   Request a free kit
                 </Button>
               </div>

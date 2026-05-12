@@ -15,14 +15,21 @@
       scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
     color: var(--color-text-primary);
   }
@@ -35,13 +42,91 @@
 
 @layer components {
   .skip-to-content {
-    @apply absolute -top-10 left-4 z-50 px-4 py-2 rounded-lg transition-all duration-200;
+    @apply absolute -top-10 left-4 z-50 rounded-lg px-4 py-2 transition-all duration-200;
     background: var(--color-action-primary-bg);
     color: var(--color-action-primary-text);
   }
 
   .skip-to-content:focus {
     @apply top-4;
+  }
+
+  /* Button variants — elevated, serif, matched pair */
+  .btn-primary {
+    background: linear-gradient(180deg, var(--color-navy-light) 0%, var(--color-navy) 100%);
+    color: #FFFFFF;
+    border: 1.5px solid var(--color-navy);
+    box-shadow: var(--elev-btn);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(180deg, var(--color-navy-light) 0%, var(--color-action-primary-hover) 100%);
+    box-shadow: var(--elev-btn-hover);
+  }
+
+  .btn-primary:active {
+    box-shadow: var(--elev-btn-active);
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface-base);
+    color: var(--color-navy);
+    border: 1.5px solid var(--color-navy);
+    box-shadow: var(--elev-btn-outline);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-navy);
+    color: #FFFFFF;
+    box-shadow: var(--elev-btn-outline-hover);
+  }
+
+  .btn-secondary:active {
+    box-shadow: var(--elev-btn-active);
+    transform: translateY(0);
+  }
+
+  .btn-gold {
+    background: linear-gradient(180deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+    color: var(--color-charcoal);
+    border: 1.5px solid var(--color-gold);
+    box-shadow: var(--elev-btn);
+  }
+
+  .btn-gold:hover {
+    background: linear-gradient(180deg, var(--color-gold-light) 0%, var(--color-gold-light) 100%);
+    box-shadow: var(--elev-btn-hover);
+  }
+
+  .btn-gold:active {
+    box-shadow: var(--elev-btn-active);
+    transform: translateY(0);
+  }
+
+  /* Hero CTA pair — matched widths */
+  .hero-cta-pair .btn-primary,
+  .hero-cta-pair .btn-secondary,
+  .hero-cta-pair .btn-gold {
+    min-width: 220px;
+  }
+
+  /* Nav phone icon */
+  .phone-ic {
+    color: var(--color-navy);
+    display: inline-flex;
+    align-items: center;
+    transition: color 200ms ease;
+  }
+
+  a:hover .phone-ic {
+    color: var(--color-deep);
+  }
+
+  /* Captions / disclaimers */
+  .caption-italic {
+    font-family: var(--font-caption);
+    font-style: italic;
   }
 }
 

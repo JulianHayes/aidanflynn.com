@@ -1,120 +1,222 @@
-:root[data-theme="light"] {
-  --color-bg-base: #F5F4F1;
-  --color-bg-subtle: #FFFFFF;
-  --color-bg-elevated: #EEF2EF;
+:root[data-theme='light'] {
+  --color-bg-base: #f5f4f1;
+  --color-bg-subtle: #ffffff;
+  --color-bg-elevated: #eef2ef;
 
-  --color-surface-base: #FFFFFF;
-  --color-surface-subtle: #EEF2EF;
-  --color-surface-elevated: #FFFFFF;
+  --color-surface-base: #ffffff;
+  --color-surface-subtle: #eef2ef;
+  --color-surface-elevated: #ffffff;
 
-  --color-text-primary: #0E1A14;
-  --color-text-secondary: #5F766C;
-  --color-text-muted: #8A9A92;
-  --color-text-inverse: #FFFFFF;
+  --color-text-primary: #0e1a14;
+  --color-text-secondary: #5f766c;
+  --color-text-muted: #8a9a92;
+  --color-text-inverse: #ffffff;
 
   --color-border-subtle: rgba(14, 26, 20, 0.06);
-  --color-border-default: rgba(14, 26, 20, 0.10);
+  --color-border-default: rgba(14, 26, 20, 0.1);
 
-  --color-brand-primary: #1F5C45;
-  --color-brand-secondary: #2E7A5B;
-  --color-brand-accent: #4AC791;
+  --color-brand-primary: #174634;
+  --color-brand-secondary: #1F5C45;
+  --color-brand-accent: #1F5C45;
 
-  --color-action-primary-bg: #1F5C45;
+  --color-action-primary-bg: #174634;
   --color-action-primary-text: #FFFFFF;
-  --color-action-primary-hover: #2E7A5B;
+  --color-action-primary-hover: #1F5C45;
   --color-action-secondary-bg: #E7E2D8;
   --color-action-secondary-text: #0E1A14;
 
-  --color-value-surface: rgba(201, 194, 179, 0.20);
-  --color-value-text: #0E1A14;
-  --color-value-accent: #C9C2B3;
+  --color-value-surface: rgba(201, 194, 179, 0.2);
+  --color-value-text: #0e1a14;
+  --color-value-accent: #c9c2b3;
 
-  --color-state-success: #3FBF8A;
-  --color-state-warning: #C2A65A;
-  --color-state-error: #D96B6B;
+  --color-state-success: #3fbf8a;
+  --color-state-warning: #c2a65a;
+  --color-state-error: #d96b6b;
 
-  --color-focus-ring: rgba(74, 199, 145, 0.35);
+  --color-focus-ring: rgba(23, 70, 52, 0.35);
 
-  /* Legacy palette mapped for theme switching */
-  --color-navy: #1B474A;
-  --color-navy-light: #2C6366;
+  /* Legacy palette — retargeted */
+  --color-navy: #174634;
+  --color-navy-light: #1F5C45;
+  --color-deep: #0D2E22;
   --color-gold: #C9A96E;
   --color-gold-light: #D4BC8A;
   --color-cream: #FAF7F2;
   --color-stone: #E8E2D8;
   --color-warm-grey: #6B6560;
   --color-charcoal: #2D2926;
+
+  /* Elevation — buttons */
+  --elev-btn:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.18) inset,
+    0 1px 2px rgba(14, 26, 20, 0.10),
+    0 4px 10px rgba(14, 26, 20, 0.14);
+  --elev-btn-hover:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.22) inset,
+    0 2px 4px rgba(14, 26, 20, 0.12),
+    0 10px 20px rgba(14, 26, 20, 0.20);
+  --elev-btn-active:
+    inset 0 2px 4px rgba(0, 0, 0, 0.25),
+    0 1px 1px rgba(14, 26, 20, 0.10);
+  --elev-btn-outline:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 1px 2px rgba(14, 26, 20, 0.06),
+    0 3px 8px rgba(14, 26, 20, 0.06);
+  --elev-btn-outline-hover:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.18) inset,
+    0 2px 4px rgba(14, 26, 20, 0.10),
+    0 8px 18px rgba(14, 26, 20, 0.16);
+
+  /* Elevation — cards */
+  --elev-card:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 rgba(14, 26, 20, 0.04) inset,
+    0 1px 2px rgba(14, 26, 20, 0.04),
+    0 8px 20px rgba(14, 26, 20, 0.06),
+    0 22px 40px -18px rgba(14, 26, 20, 0.10);
+  --elev-card-hover:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(14, 26, 20, 0.05) inset,
+    0 2px 4px rgba(14, 26, 20, 0.05),
+    0 14px 28px rgba(14, 26, 20, 0.08),
+    0 30px 50px -22px rgba(14, 26, 20, 0.14);
+
+  /* Elevation — pressed inputs / chips / icon niches */
+  --elev-inset:
+    inset 0 1px 2px rgba(14, 26, 20, 0.08),
+    inset 0 2px 4px rgba(14, 26, 20, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.75);
+  --elev-inset-focus:
+    inset 0 1px 2px rgba(14, 26, 20, 0.10),
+    0 0 0 3px var(--color-focus-ring);
+  --elev-chip-inset:
+    inset 0 1px 2px rgba(14, 26, 20, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.6);
 }
 
 :root[data-theme="dark"] {
-  --color-bg-base: #071912;
-  --color-bg-subtle: #0F241C;
-  --color-bg-elevated: #17372E;
+  --color-bg-base: #0A1612;
+  --color-bg-subtle: #0F1F18;
+  --color-bg-elevated: #152A20;
 
-  --color-surface-base: #0F241C;
-  --color-surface-subtle: #17372E;
-  --color-surface-elevated: #17372E;
+  --color-surface-base: #0F1F18;
+  --color-surface-subtle: #152A20;
+  --color-surface-elevated: #152A20;
 
-  --color-text-primary: #E6EBE8;
-  --color-text-secondary: #A8B3AD;
-  --color-text-muted: #7E8A84;
-  --color-text-inverse: #0E1A14;
+  --color-text-primary: #e6ebe8;
+  --color-text-secondary: #a8b3ad;
+  --color-text-muted: #7e8a84;
+  --color-text-inverse: #0e1a14;
 
-  --color-border-subtle: rgba(168, 173, 166, 0.08);
-  --color-border-default: rgba(168, 173, 166, 0.14);
+  --color-border-subtle: rgba(168, 173, 166, 0.06);
+  --color-border-default: rgba(168, 173, 166, 0.12);
 
-  --color-brand-primary: #2F6B53;
-  --color-brand-secondary: #2F7455;
-  --color-brand-accent: #3FBF8A;
+  --color-brand-primary: #8E9B94;
+  --color-brand-secondary: #A8B3AD;
+  --color-brand-accent: #8E9B94;
 
-  --color-action-primary-bg: #2F6B53;
-  --color-action-primary-text: #E6EBE8;
-  --color-action-primary-hover: #2F7455;
+  --color-action-primary-bg: #2C6B52;
+  --color-action-primary-text: #EAF2EE;
+  --color-action-primary-hover: #357A5F;
   --color-action-secondary-bg: rgba(168, 173, 166, 0.10);
   --color-action-secondary-text: #E6EBE8;
 
   --color-value-surface: rgba(168, 173, 166, 0.12);
-  --color-value-text: #E6EBE8;
-  --color-value-accent: #8F968E;
+  --color-value-text: #e6ebe8;
+  --color-value-accent: #8f968e;
 
-  --color-state-success: #3FBF8A;
-  --color-state-warning: #C2A65A;
-  --color-state-error: #D96B6B;
+  --color-state-success: #3fbf8a;
+  --color-state-warning: #c2a65a;
+  --color-state-error: #d96b6b;
 
-  --color-focus-ring: rgba(63, 191, 138, 0.35);
+  --color-focus-ring: rgba(142, 155, 148, 0.30);
 
   /* Legacy palette — dark equivalents */
-  --color-navy: #4AC791;
-  --color-navy-light: #3FBF8A;
+  --color-navy: #8E9B94;
+  --color-navy-light: #A8B3AD;
+  --color-deep: #081B14;
   --color-gold: #C9A96E;
   --color-gold-light: #D4BC8A;
-  --color-cream: #071912;
-  --color-stone: rgba(168, 173, 166, 0.14);
-  --color-warm-grey: #A8B3AD;
+  --color-cream: #0A1612;
+  --color-stone: rgba(168, 173, 166, 0.12);
+  --color-warm-grey: #98A29C;
   --color-charcoal: #E6EBE8;
+
+  /* Elevation — buttons */
+  --elev-btn:
+    0 1px 0 rgba(255, 255, 255, 0.10) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.50) inset,
+    0 1px 2px rgba(0, 0, 0, 0.45),
+    0 6px 14px rgba(0, 0, 0, 0.55);
+  --elev-btn-hover:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.55) inset,
+    0 3px 6px rgba(0, 0, 0, 0.50),
+    0 12px 24px rgba(0, 0, 0, 0.65);
+  --elev-btn-active:
+    inset 0 2px 5px rgba(0, 0, 0, 0.60),
+    0 1px 1px rgba(0, 0, 0, 0.40);
+  --elev-btn-outline:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.40);
+  --elev-btn-outline-hover:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.50) inset,
+    0 3px 6px rgba(0, 0, 0, 0.45),
+    0 10px 20px rgba(0, 0, 0, 0.60);
+
+  /* Elevation — cards */
+  --elev-card:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.35) inset,
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 10px 22px rgba(0, 0, 0, 0.45),
+    0 26px 46px -20px rgba(0, 0, 0, 0.60);
+  --elev-card-hover:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.40) inset,
+    0 3px 6px rgba(0, 0, 0, 0.40),
+    0 16px 32px rgba(0, 0, 0, 0.50),
+    0 34px 60px -22px rgba(0, 0, 0, 0.70);
+
+  /* Elevation — pressed inputs / chips / icon niches */
+  --elev-inset:
+    inset 0 1px 2px rgba(0, 0, 0, 0.55),
+    inset 0 2px 6px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.04);
+  --elev-inset-focus:
+    inset 0 1px 2px rgba(0, 0, 0, 0.60),
+    0 0 0 3px var(--color-focus-ring);
+  --elev-chip-inset:
+    inset 0 1px 2px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 /* Fallback for when no data-theme is set (e.g. before JS runs) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --color-bg-base: #071912;
-    --color-bg-subtle: #0F241C;
-    --color-bg-elevated: #17372E;
-    --color-surface-base: #0F241C;
-    --color-surface-subtle: #17372E;
-    --color-surface-elevated: #17372E;
+    --color-bg-base: #0A1612;
+    --color-bg-subtle: #0F1F18;
+    --color-bg-elevated: #152A20;
+    --color-surface-base: #0F1F18;
+    --color-surface-subtle: #152A20;
+    --color-surface-elevated: #152A20;
     --color-text-primary: #E6EBE8;
     --color-text-secondary: #A8B3AD;
     --color-text-muted: #7E8A84;
     --color-text-inverse: #0E1A14;
-    --color-border-subtle: rgba(168, 173, 166, 0.08);
-    --color-border-default: rgba(168, 173, 166, 0.14);
-    --color-brand-primary: #2F6B53;
-    --color-brand-secondary: #2F7455;
-    --color-brand-accent: #3FBF8A;
-    --color-action-primary-bg: #2F6B53;
-    --color-action-primary-text: #E6EBE8;
-    --color-action-primary-hover: #2F7455;
+    --color-border-subtle: rgba(168, 173, 166, 0.06);
+    --color-border-default: rgba(168, 173, 166, 0.12);
+    --color-brand-primary: #8E9B94;
+    --color-brand-secondary: #A8B3AD;
+    --color-brand-accent: #8E9B94;
+    --color-action-primary-bg: #2C6B52;
+    --color-action-primary-text: #EAF2EE;
+    --color-action-primary-hover: #357A5F;
     --color-action-secondary-bg: rgba(168, 173, 166, 0.10);
     --color-action-secondary-text: #E6EBE8;
     --color-value-surface: rgba(168, 173, 166, 0.12);
@@ -123,38 +225,84 @@
     --color-state-success: #3FBF8A;
     --color-state-warning: #C2A65A;
     --color-state-error: #D96B6B;
-    --color-focus-ring: rgba(63, 191, 138, 0.35);
-    --color-navy: #4AC791;
-    --color-navy-light: #3FBF8A;
+    --color-focus-ring: rgba(142, 155, 148, 0.30);
+    --color-navy: #8E9B94;
+    --color-navy-light: #A8B3AD;
+    --color-deep: #081B14;
     --color-gold: #C9A96E;
     --color-gold-light: #D4BC8A;
-    --color-cream: #071912;
-    --color-stone: rgba(168, 173, 166, 0.14);
-    --color-warm-grey: #A8B3AD;
+    --color-cream: #0A1612;
+    --color-stone: rgba(168, 173, 166, 0.12);
+    --color-warm-grey: #98A29C;
     --color-charcoal: #E6EBE8;
+
+    --elev-btn:
+      0 1px 0 rgba(255, 255, 255, 0.10) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.50) inset,
+      0 1px 2px rgba(0, 0, 0, 0.45),
+      0 6px 14px rgba(0, 0, 0, 0.55);
+    --elev-btn-hover:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.55) inset,
+      0 3px 6px rgba(0, 0, 0, 0.50),
+      0 12px 24px rgba(0, 0, 0, 0.65);
+    --elev-btn-active:
+      inset 0 2px 5px rgba(0, 0, 0, 0.60),
+      0 1px 1px rgba(0, 0, 0, 0.40);
+    --elev-btn-outline:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 1px 2px rgba(0, 0, 0, 0.35),
+      0 4px 10px rgba(0, 0, 0, 0.40);
+    --elev-btn-outline-hover:
+      0 1px 0 rgba(255, 255, 255, 0.08) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.50) inset,
+      0 3px 6px rgba(0, 0, 0, 0.45),
+      0 10px 20px rgba(0, 0, 0, 0.60);
+    --elev-card:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.35) inset,
+      0 1px 2px rgba(0, 0, 0, 0.35),
+      0 10px 22px rgba(0, 0, 0, 0.45),
+      0 26px 46px -20px rgba(0, 0, 0, 0.60);
+    --elev-card-hover:
+      0 1px 0 rgba(255, 255, 255, 0.06) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.40) inset,
+      0 3px 6px rgba(0, 0, 0, 0.40),
+      0 16px 32px rgba(0, 0, 0, 0.50),
+      0 34px 60px -22px rgba(0, 0, 0, 0.70);
+    --elev-inset:
+      inset 0 1px 2px rgba(0, 0, 0, 0.55),
+      inset 0 2px 6px rgba(0, 0, 0, 0.35),
+      0 1px 0 rgba(255, 255, 255, 0.04);
+    --elev-inset-focus:
+      inset 0 1px 2px rgba(0, 0, 0, 0.60),
+      0 0 0 3px var(--color-focus-ring);
+    --elev-chip-inset:
+      inset 0 1px 2px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.03);
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
-    --color-bg-base: #F5F4F1;
-    --color-bg-subtle: #FFFFFF;
-    --color-bg-elevated: #EEF2EF;
-    --color-surface-base: #FFFFFF;
-    --color-surface-subtle: #EEF2EF;
-    --color-surface-elevated: #FFFFFF;
-    --color-text-primary: #0E1A14;
-    --color-text-secondary: #5F766C;
-    --color-text-muted: #8A9A92;
-    --color-text-inverse: #FFFFFF;
+    --color-bg-base: #f5f4f1;
+    --color-bg-subtle: #ffffff;
+    --color-bg-elevated: #eef2ef;
+    --color-surface-base: #ffffff;
+    --color-surface-subtle: #eef2ef;
+    --color-surface-elevated: #ffffff;
+    --color-text-primary: #0e1a14;
+    --color-text-secondary: #5f766c;
+    --color-text-muted: #8a9a92;
+    --color-text-inverse: #ffffff;
     --color-border-subtle: rgba(14, 26, 20, 0.06);
     --color-border-default: rgba(14, 26, 20, 0.10);
-    --color-brand-primary: #1F5C45;
-    --color-brand-secondary: #2E7A5B;
-    --color-brand-accent: #4AC791;
-    --color-action-primary-bg: #1F5C45;
+    --color-brand-primary: #174634;
+    --color-brand-secondary: #1F5C45;
+    --color-brand-accent: #1F5C45;
+    --color-action-primary-bg: #174634;
     --color-action-primary-text: #FFFFFF;
-    --color-action-primary-hover: #2E7A5B;
+    --color-action-primary-hover: #1F5C45;
     --color-action-secondary-bg: #E7E2D8;
     --color-action-secondary-text: #0E1A14;
     --color-value-surface: rgba(201, 194, 179, 0.20);
@@ -163,15 +311,61 @@
     --color-state-success: #3FBF8A;
     --color-state-warning: #C2A65A;
     --color-state-error: #D96B6B;
-    --color-focus-ring: rgba(74, 199, 145, 0.35);
-    --color-navy: #1B474A;
-    --color-navy-light: #2C6366;
+    --color-focus-ring: rgba(23, 70, 52, 0.35);
+    --color-navy: #174634;
+    --color-navy-light: #1F5C45;
+    --color-deep: #0D2E22;
     --color-gold: #C9A96E;
     --color-gold-light: #D4BC8A;
     --color-cream: #FAF7F2;
     --color-stone: #E8E2D8;
     --color-warm-grey: #6B6560;
     --color-charcoal: #2D2926;
+
+    --elev-btn:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.18) inset,
+      0 1px 2px rgba(14, 26, 20, 0.10),
+      0 4px 10px rgba(14, 26, 20, 0.14);
+    --elev-btn-hover:
+      0 1px 0 rgba(255, 255, 255, 0.18) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.22) inset,
+      0 2px 4px rgba(14, 26, 20, 0.12),
+      0 10px 20px rgba(14, 26, 20, 0.20);
+    --elev-btn-active:
+      inset 0 2px 4px rgba(0, 0, 0, 0.25),
+      0 1px 1px rgba(14, 26, 20, 0.10);
+    --elev-btn-outline:
+      0 1px 0 rgba(255, 255, 255, 0.6) inset,
+      0 1px 2px rgba(14, 26, 20, 0.06),
+      0 3px 8px rgba(14, 26, 20, 0.06);
+    --elev-btn-outline-hover:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.18) inset,
+      0 2px 4px rgba(14, 26, 20, 0.10),
+      0 8px 18px rgba(14, 26, 20, 0.16);
+    --elev-card:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 -1px 0 rgba(14, 26, 20, 0.04) inset,
+      0 1px 2px rgba(14, 26, 20, 0.04),
+      0 8px 20px rgba(14, 26, 20, 0.06),
+      0 22px 40px -18px rgba(14, 26, 20, 0.10);
+    --elev-card-hover:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 -1px 0 rgba(14, 26, 20, 0.05) inset,
+      0 2px 4px rgba(14, 26, 20, 0.05),
+      0 14px 28px rgba(14, 26, 20, 0.08),
+      0 30px 50px -22px rgba(14, 26, 20, 0.14);
+    --elev-inset:
+      inset 0 1px 2px rgba(14, 26, 20, 0.08),
+      inset 0 2px 4px rgba(14, 26, 20, 0.04),
+      0 1px 0 rgba(255, 255, 255, 0.75);
+    --elev-inset-focus:
+      inset 0 1px 2px rgba(14, 26, 20, 0.10),
+      0 0 0 3px var(--color-focus-ring);
+    --elev-chip-inset:
+      inset 0 1px 2px rgba(14, 26, 20, 0.06),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.6);
   }
 }
 

@@ -61,10 +61,11 @@ Key colour class mappings:
 - Page backgrounds: `bg-cream` (switches per theme) or `bg-surface` (white/dark surface)
 - Headings: `text-charcoal` (switches per theme)
 - Body text: `text-warm-grey` (switches per theme)
-- Brand accent: `text-navy`, `bg-navy` (switches per theme)
+- Brand accent: `text-navy`, `bg-navy` = `#174634` light / muted sage `#8E9B94` dark (switches per theme)
+- Deepest green (footer, CTA band, logo lockup): `bg-navy-deep`, `text-navy-deep` = `#0D2E22` light / `#081B14` dark
 - Borders: `border-stone` (switches per theme)
 - Cards/inputs/nav: `bg-surface` (white in light, dark surface in dark)
-- Gold accent: `bg-gold`, `text-gold` (same in both themes)
+- Gold accent: `bg-gold`, `text-gold` (same in both themes) — prices and step eyebrows only, never on CTAs
 
 Semantic system tokens are also available as Tailwind classes: `bg-background`, `bg-surface-elevated`, `text-foreground`, `text-foreground-secondary`, `bg-brand`, `text-brand-accent`, `border-border-subtle`, etc.
 

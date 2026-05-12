@@ -1,0 +1,39 @@
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
+
+interface BrandProps {
+  className?: string
+  tone?: 'default' | 'inverse'
+}
+
+export default function Brand({ className, tone = 'default' }: BrandProps) {
+  const toneClass =
+    tone === 'inverse'
+      ? 'text-white'
+      : 'text-navy-deep dark:text-navy-light'
+
+  return (
+    <Link
+      href="/"
+      aria-label="Aidan Flynn — Home"
+      className={cn('inline-flex items-center gap-3 transition-colors', toneClass, className)}
+    >
+      <span aria-hidden="true" className="block w-[34px] h-[26px] shrink-0">
+        <svg
+          viewBox="0 0 954 712"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          className="w-full h-full"
+        >
+          <path d="M310.282 236.702L243 421H370.165L391.284 486H219L160 645C190.667 649 219.667 658.667 247 674V712H0V674C10.6667 667.333 22 661.667 34 657C46.6667 651.667 59 647.667 71 645L276.234 131.912L310.282 236.702ZM654 645C667.333 647.667 680.667 651.667 694 657C707.333 661.667 719 667.333 729 674V712H416V674C428.667 668 442.333 662.333 457 657C471.667 651.667 485.667 647.667 499 645L445.163 497.414L445.435 497.326L304.568 63.7842L303.324 64.1875L329 0H403L654 645Z" />
+          <path d="M652.258 641.255V644C652.638 644.05 653.018 644.1 653.398 644.151L653.479 644.354L653.84 644.211C683.922 648.334 712.395 657.931 739.258 673V711H430.258V673C440.924 667 452.258 661.667 464.258 657C476.258 651.667 488.924 647.333 502.258 644V339H533.196L652.258 641.255ZM864.258 262C866.924 279.333 868.591 297.667 869.258 317C870.591 336.333 871.258 355.667 871.258 375C870.591 395 869.591 414.333 868.258 433C867.591 451.667 866.258 468.333 864.258 483H834.258L789.258 404H655.258V403.997H610.389L584.785 339H789.258L834.258 262H864.258ZM953.258 11C953.258 24.3334 952.591 39 951.258 55C949.924 70.3333 948.258 86.3334 946.258 103C944.924 119 942.924 135 940.258 151C938.258 166.333 935.924 180.667 933.258 194H892.258L846.258 76H493.732C488.834 74.7633 484.121 73.4127 479.593 71.9541L455.583 11H953.258Z" />
+        </svg>
+      </span>
+      <span
+        className="font-serif font-bold text-[18px] uppercase tracking-[0.04em] leading-none whitespace-nowrap"
+      >
+        Aidan Flynn
+      </span>
+    </Link>
+  )
+}
