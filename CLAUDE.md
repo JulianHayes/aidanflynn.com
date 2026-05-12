@@ -77,7 +77,7 @@ Semantic system tokens are also available as Tailwind classes: `bg-background`, 
 
 ### Design system
 - Colour palette: green-based with neutral tones. Gold `#C9A96E` used sparingly — prices, CTAs, calculator only.
-- Fonts: Libre Baskerville (serif, headings), Inter (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars
+- Fonts: PT Serif (serif, headings), PT Sans (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars
 - Max content width: 1200px. Generous whitespace. Single-column for text-heavy pages.
 - The aesthetic is modern fintech (Wise/Monzo), not cash-for-gold. No gold gradients, no stock photos, no visual noise.
 - Accessibility: 44px minimum touch targets, focus rings via `--color-focus-ring`, disabled states on all interactive elements, `aria-invalid`/`aria-describedby` on form fields
