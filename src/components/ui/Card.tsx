@@ -14,11 +14,13 @@ const paddingStyles = {
 
 export default function Card({ children, className, padding = 'lg' }: CardProps) {
   return (
-    <div className={cn(
-      'bg-surface border border-stone rounded-card shadow-card transition-shadow duration-300 hover:shadow-md',
-      paddingStyles[padding],
-      className
-    )}>
+    <div
+      className={cn(
+        'rounded-card border border-stone bg-surface shadow-card transition-shadow duration-300 hover:shadow-md',
+        paddingStyles[padding],
+        className
+      )}
+    >
       {children}
     </div>
   )

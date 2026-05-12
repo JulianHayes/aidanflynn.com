@@ -54,21 +54,21 @@ export default function KitRequestForm() {
     setSubmitting(false)
   }
 
-  const handleChange = (field: keyof FormData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
-    if (errors[field as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }))
+  const handleChange =
+    (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+      if (errors[field as keyof FormErrors]) {
+        setErrors((prev) => ({ ...prev, [field]: undefined }))
+      }
     }
-  }
 
   if (submitted) {
     return (
-      <div className="text-center py-12 px-6 bg-success/5 rounded-card border border-success/20">
-        <h3 className="font-serif text-xl text-charcoal mb-3">Your kit is on its way</h3>
+      <div className="bg-success/5 border-success/20 rounded-card border px-6 py-12 text-center">
+        <h3 className="mb-3 font-serif text-xl text-charcoal">Your kit is on its way</h3>
         <p className="text-body text-warm-grey">
-          We will send your free insured posting kit within 24 hours. Check your email for confirmation and tracking details.
+          We will send your free insured posting kit within 24 hours. Check your email for
+          confirmation and tracking details.
         </p>
       </div>
     )
@@ -84,7 +84,7 @@ export default function KitRequestForm() {
         required
         placeholder="Your full name"
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Input
           label="Email"
           type="email"
@@ -118,7 +118,7 @@ export default function KitRequestForm() {
           id="items"
           value={formData.items}
           onChange={handleChange('items')}
-          className="w-full px-4 py-3 rounded-lg border border-stone bg-surface text-charcoal text-body placeholder:text-warm-grey/60 focus:outline-none focus:ring-2 focus:ring-focus-ring focus:border-brand transition-colors duration-200 resize-y min-h-[100px]"
+          className="placeholder:text-warm-grey/60 min-h-[100px] w-full resize-y rounded-lg border border-stone bg-surface px-4 py-3 text-body text-charcoal transition-colors duration-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-focus-ring"
           rows={4}
           placeholder="Describe what you would like to sell (e.g., gold rings, silver bracelet, etc.)"
         />

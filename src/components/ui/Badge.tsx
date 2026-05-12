@@ -15,11 +15,13 @@ const variantStyles = {
 
 export default function Badge({ children, variant = 'navy', className }: BadgeProps) {
   return (
-    <span className={cn(
-      'inline-flex items-center px-3 py-1 rounded-full text-small font-medium border',
-      variantStyles[variant],
-      className
-    )}>
+    <span
+      className={cn(
+        'inline-flex items-center rounded-full border px-3 py-1 text-small font-medium',
+        variantStyles[variant],
+        className
+      )}
+    >
       {children}
     </span>
   )

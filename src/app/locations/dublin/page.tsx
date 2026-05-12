@@ -28,15 +28,14 @@ export default function DublinPage() {
   return (
     <>
       <section className="bg-cream py-16 md:py-24">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex items-center gap-3 mb-4">
-            <h1 className="font-serif text-hero-mobile md:text-hero text-charcoal">
-              Dublin
-            </h1>
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
+          <div className="mb-4 flex items-center gap-3">
+            <h1 className="font-serif text-hero-mobile text-charcoal md:text-hero">Dublin</h1>
             <Badge variant="gold">Coming soon</Badge>
           </div>
-          <p className="text-body md:text-subheading text-warm-grey max-w-2xl">
-            We are opening in Dublin soon. In the meantime, our postal service is available to customers across the Republic of Ireland, with payment in Euro.
+          <p className="max-w-2xl text-body text-warm-grey md:text-subheading">
+            We are opening in Dublin soon. In the meantime, our postal service is available to
+            customers across the Republic of Ireland, with payment in Euro.
           </p>
         </div>
       </section>
@@ -44,16 +43,16 @@ export default function DublinPage() {
       <TrustBar />
 
       <section className="bg-surface py-section-mobile md:py-section">
-        <div className="max-w-content mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="mx-auto max-w-content px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h2 className="font-serif text-section-heading-mobile md:text-section-heading text-charcoal mb-6">
+                <h2 className="mb-6 font-serif text-section-heading-mobile text-charcoal md:text-section-heading">
                   Dublin location
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <MapPin size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <MapPin size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Address</p>
                       <p>Grafton Street, Dublin 2, Ireland</p>
@@ -61,7 +60,7 @@ export default function DublinPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-body text-warm-grey">
-                    <Clock size={20} className="text-navy flex-shrink-0 mt-1" />
+                    <Clock size={20} className="mt-1 flex-shrink-0 text-navy" />
                     <div>
                       <p className="font-medium text-charcoal">Opening hours</p>
                       <p>To be confirmed</p>
@@ -71,23 +70,28 @@ export default function DublinPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-xl text-charcoal mb-3">About our Dublin plans</h3>
+                <h3 className="mb-3 font-serif text-xl text-charcoal">About our Dublin plans</h3>
                 <p className="text-body text-warm-grey">
-                  Dublin is our next location. We are excited to bring transparent precious metals buying to the Republic of Ireland with a physical presence on Grafton Street. Until we open, our full postal service is available to Irish customers, with payment in Euro and An Post insured delivery.
+                  Dublin is our next location. We are excited to bring transparent precious metals
+                  buying to the Republic of Ireland with a physical presence on Grafton Street.
+                  Until we open, our full postal service is available to Irish customers, with
+                  payment in Euro and An Post insured delivery.
                 </p>
-                <p className="text-body text-warm-grey mt-3">
-                  We provide CAT-compliant valuations for Irish tax purposes and can assist with probate valuations under Irish inheritance rules.
+                <p className="mt-3 text-body text-warm-grey">
+                  We provide CAT-compliant valuations for Irish tax purposes and can assist with
+                  probate valuations under Irish inheritance rules.
                 </p>
               </div>
 
               {/* Register Interest */}
               <Card>
-                <h3 className="font-serif text-xl text-charcoal mb-3">Register your interest</h3>
-                <p className="text-small text-warm-grey mb-4">
-                  Be the first to know when our Dublin location opens. We will email you once — no spam.
+                <h3 className="mb-3 font-serif text-xl text-charcoal">Register your interest</h3>
+                <p className="mb-4 text-small text-warm-grey">
+                  Be the first to know when our Dublin location opens. We will email you once — no
+                  spam.
                 </p>
                 {registered ? (
-                  <p className="text-body text-success font-medium">
+                  <p className="text-body font-medium text-success">
                     Thank you. We will let you know when Dublin opens.
                   </p>
                 ) : (
@@ -97,13 +101,16 @@ export default function DublinPage() {
                         label=""
                         type="email"
                         value={email}
-                        onChange={(e) => { setEmail(e.target.value); setEmailError('') }}
+                        onChange={(e) => {
+                          setEmail(e.target.value)
+                          setEmailError('')
+                        }}
                         error={emailError}
                         placeholder="your@email.com"
                         aria-label="Email address"
                       />
                     </div>
-                    <Button type="submit" variant="gold" size="sm" className="self-start mt-1">
+                    <Button type="submit" variant="gold" size="sm" className="mt-1 self-start">
                       Notify me
                     </Button>
                   </form>
@@ -117,7 +124,7 @@ export default function DublinPage() {
                 <Button href="/contact" variant="gold" size="lg" className="w-full">
                   Use our postal service
                 </Button>
-                <p className="text-small text-warm-grey mt-3">
+                <p className="mt-3 text-small text-warm-grey">
                   Free insured postage from anywhere in Ireland. Payment in GBP or EUR.
                 </p>
               </div>
