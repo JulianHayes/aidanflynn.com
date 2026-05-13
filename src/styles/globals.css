@@ -123,7 +123,29 @@
     color: var(--color-deep);
   }
 
-  /* Captions / disclaimers */
+  /* Caption faces — fine print only (≤12px) */
+  .caption-fine {
+    font-family: var(--font-caption);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+
+  .caption-fine--bold {
+    font-family: var(--font-caption);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .caption-serif {
+    font-family: var(--font-caption-serif);
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
   .caption-italic {
     font-family: var(--font-caption);
     font-style: italic;

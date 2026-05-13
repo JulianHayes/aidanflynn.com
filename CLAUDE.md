@@ -77,11 +77,21 @@ Semantic system tokens are also available as Tailwind classes: `bg-background`, 
 - `prefers-reduced-motion` is respected globally (animations disabled)
 
 ### Design system
-- Colour palette: green-based with neutral tones. Gold `#C9A96E` used sparingly — prices, CTAs, calculator only.
-- Fonts: PT Serif (serif, headings), PT Sans (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars
+- Colour palette: green-based with neutral tones. Brand primary is near-black forest `#0F241C` (green-900). Gold `#C9A96E` used sparingly — prices, CTAs, calculator only. Accents are muted sage, not vibrant emerald.
+- Fonts: PT Serif (serif, headings), PT Sans (sans, body/data/nav) — loaded via `--font-heading` and `--font-body` CSS vars. Caption faces PT Sans Caption and PT Serif Caption are self-hosted from `public/fonts/`.
 - Max content width: 1200px. Generous whitespace. Single-column for text-heavy pages.
 - The aesthetic is modern fintech (Wise/Monzo), not cash-for-gold. No gold gradients, no stock photos, no visual noise.
 - Accessibility: 44px minimum touch targets, focus rings via `--color-focus-ring`, disabled states on all interactive elements, `aria-invalid`/`aria-describedby` on form fields
+
+### Caption faces
+- **PT Sans Caption** (`font-caption`) — legal text, table footnotes, validation hints, footer copyright, micro-labels. Default fine-print face.
+- **PT Serif Caption italic** (`font-caption-serif`) — "Coming soon" markers, italicised micro-prose, kit-insert italic notes. Use sparingly.
+- **Never use either above 12px.** PT Sans / PT Serif handle everything else.
+- Utility classes: `.caption-fine`, `.caption-fine--bold`, `.caption-serif`
+
+### Brand name casing
+- The logo lockup is the **only** place the name appears as `AIDAN FLYNN` (applied via `text-transform: uppercase`).
+- Everywhere else — headings, body copy, page titles, metadata, emails — write **Aidan Flynn** in title case.
 
 ### SEO
 - Per-page metadata via Next.js Metadata API with template `%s | Aidan Flynn`
