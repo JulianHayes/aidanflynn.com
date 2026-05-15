@@ -538,4 +538,10 @@ function ToggleCard({
           {checked && <span className="block h-2 w-2 rounded-full bg-white" />}
         </span>
         <span className="block">
-          <span className="block
+          <span className="block font-serif text-base text-charcoal">{title}</span>
+          <span className="mt-1 block text-small text-warm-grey">{description}</span>
+        </span>
+      </div>
+    </button>
+  )
+}

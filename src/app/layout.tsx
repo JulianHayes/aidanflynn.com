@@ -25,4 +25,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // the half-built navigation links never appear. Flip the flag in constants.ts
   // to swap back to the full nav + footer once the main site is ready.
   return (
-    <html lang="en" data-theme="light" suppressHydrati
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head />
+      {/* Fonts self-hosted from public/fonts/ — no external requests */}
+      <body>
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
+        {LANDING_MODE ? (
+          <LandingShell>{children}</LandingShell>
+        ) : (
+          <>
+            <Navigation />
+            <main id="main-content">{children}</main>
+            <Footer />
+          </>
+        )}
+      </body>
+    </html>
+  )
+}

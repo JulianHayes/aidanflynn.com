@@ -267,4 +267,10 @@ export const BLOG_POSTS = [
       'Ever wondered where your gold goes after you sell it? We explain the refining process and why it matters.',
   },
   {
-    title: 'Gold prices
+    title: 'Gold prices in 2026: what sellers need to know',
+    slug: 'gold-prices-2026',
+    date: '2026-02-20',
+    excerpt:
+      'Gold prices have been climbing steadily. Here is what is driving the market and what it means if you are thinking of selling.',
+  },
+] as const
