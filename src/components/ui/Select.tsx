@@ -26,7 +26,7 @@ export default function Select({ label, options, error, className, id, ...props 
           className={cn(
             'w-full px-4 py-3 pr-10 min-h-[44px] rounded-lg border border-border-subtle bg-background text-charcoal text-body',
             'shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus',
-            'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-stone/30',
+            'disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-stone/30',
             'transition-[box-shadow,border-color] duration-200 appearance-none',
             error && 'border-error focus:border-error',
             className

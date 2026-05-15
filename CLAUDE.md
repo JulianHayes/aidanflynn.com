@@ -32,7 +32,7 @@ No test framework is configured.
 ### Key files
 - `src/lib/constants.ts` — Central data store: spot prices, buy percentages, locations, nav items, testimonials, FAQ content, blog posts. Most page content pulls from here.
 - `src/lib/utils.ts` — `cn()` for classnames, `formatCurrency()`, `formatDate()`
-- `src/app/layout.tsx` — Root layout with Navigation, Footer, Google Fonts via `<link>`, skip-to-content link, `data-theme="light"` attribute
+- `src/app/layout.tsx` — Root layout with Navigation, Footer, skip-to-content link, `data-theme="light"` attribute. Fonts self-hosted from `public/fonts/` (no Google Fonts dependency).
 - `tailwind.config.ts` — Design system: theme-aware legacy palette, reference colour scales, semantic token colours, typography, spacing, motion
 
 ### Component patterns

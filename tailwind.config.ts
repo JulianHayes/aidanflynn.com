@@ -129,7 +129,7 @@ const config: Config = {
         'section-mobile': '48px',
       },
       borderRadius: {
-        card: '12px',
+        card: '16px',
         sm: 'var(--radius-sm)',
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
