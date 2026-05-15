@@ -221,4 +221,3 @@ function buildEmailText(subject: string, p: Record<string, unknown>): string {
   ]
   return lines.filter(Boolean).join('\n')
 }
-                            
