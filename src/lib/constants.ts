@@ -3,10 +3,15 @@ export const SITE_URL = 'https://aidanflynn.com'
 export const SITE_DESCRIPTION =
   'Aidan Flynn buys gold, silver, and platinum from people across the UK and Ireland. Transparent pricing. Free insured postage. Same-day payment.'
 
+// While true, src/middleware.ts redirects every public route back to / and
+// src/app/layout.tsx swaps the Navigation/Footer for a minimal landing shell.
+// Set to false the moment the full site is ready to go live.
+export const LANDING_MODE = true
+
 export const CONTACT = {
-  phone: '+44 1234 567890',
-  phoneDisplay: '01234 567 890',
-  email: 'hello@aidanflynn.com',
+  phone: '+447417497708',
+  phoneDisplay: '+44 (0) 7417 497708',
+  email: 'aidan@aidanflynn.com',
   trustpilotScore: '4.9',
   trustpilotReviews: '127',
 }
@@ -262,10 +267,4 @@ export const BLOG_POSTS = [
       'Ever wondered where your gold goes after you sell it? We explain the refining process and why it matters.',
   },
   {
-    title: 'Gold prices in 2026: what sellers need to know',
-    slug: 'gold-prices-2026',
-    date: '2026-02-20',
-    excerpt:
-      'Gold prices have been climbing steadily. Here is what is driving the market and what it means if you are thinking of selling.',
-  },
-] as const
+    title: 'Gold prices
