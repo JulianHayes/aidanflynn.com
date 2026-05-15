@@ -181,7 +181,7 @@ export default function ContactPage() {
                         id="message"
                         value={formData.message}
                         onChange={handleChange('message')}
-                        className="w-full px-4 py-3 rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus disabled:opacity-50 disabled:cursor-not-allowed transition-[box-shadow,border-color] duration-200 resize-y min-h-[120px]"
+                        className="w-full px-4 py-3 rounded-lg border border-border-subtle bg-background text-charcoal text-body placeholder:text-warm-grey/60 shadow-elev-inset focus:outline-none focus:border-navy focus:shadow-elev-inset-focus disabled:opacity-60 disabled:cursor-not-allowed transition-[box-shadow,border-color] duration-200 resize-y min-h-[120px]"
                         rows={5}
                         placeholder="How can we help?"
                         required

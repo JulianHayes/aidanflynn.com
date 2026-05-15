@@ -74,7 +74,7 @@ export default function PricingPage() {
             </h2>
             <div className="space-y-4 text-body text-warm-grey">
               <p>
-                We typically pay between 80% and 90% of the live spot price, depending on purity and
+                We typically pay between 80% and 85% of the live spot price, depending on purity and
                 volume. That margin covers the real costs of running a trustworthy operation:
               </p>
               <ul className="ml-4 space-y-3">

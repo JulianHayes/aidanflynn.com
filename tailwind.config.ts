@@ -34,8 +34,8 @@ const config: Config = {
 
         // --- Reference scales ---
         green: {
-          350: '#4AC791',
-          400: '#3FBF8A',
+          350: '#9CB4A2',
+          400: '#8FA89A',
           500: '#2F7455',
           550: '#2F6B53',
           600: '#2E7A5B',
@@ -107,6 +107,7 @@ const config: Config = {
         serif: ['var(--font-heading)'],
         sans: ['var(--font-body)'],
         caption: ['var(--font-caption)'],
+        'caption-serif': ['var(--font-caption-serif)'],
       },
       fontSize: {
         hero: ['48px', { lineHeight: '56px' }],
@@ -128,7 +129,7 @@ const config: Config = {
         'section-mobile': '48px',
       },
       borderRadius: {
-        card: '12px',
+        card: '16px',
         sm: 'var(--radius-sm)',
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
