@@ -33,14 +33,18 @@ interface FormErrors {
   postcode?: string
 }
 
-// Postcodes.io response shape for the bits we care about
-interface PostcodeLookup {
+// Server returns the tidy address list shape from /api/postcode-lookup
+interface SimpleAddress {
+  label: string
+  line1: string
+  line2: string
+  city: string
+  county: string
+}
+
+interface PostcodeLookupResponse {
   postcode: string
-  admin_district: string | null
-  admin_county: string | null
-  parish: string | null
-  region: string | null
-  country: string | null
+  addresses: SimpleAddress[]
 }
 
 const initialState: FormState = {
@@ -68,7 +72,8 @@ export default function LandingForm() {
   // UK postcode lookup state
   const [lookupBusy, setLookupBusy] = useState(false)
   const [lookupError, setLookupError] = useState<string | null>(null)
-  const [lookupHit, setLookupHit] = useState(false)
+  const [addressOptions, setAddressOptions] = useState<SimpleAddress[]>([])
+  const [selectedAddressIdx, setSelectedAddressIdx] = useState<number | ''>('')
   const lookupAbort = useRef<AbortController | null>(null)
 
   // Reset address fields when toggling country
@@ -81,7 +86,8 @@ export default function LandingForm() {
       city: '',
       county: '',
     }))
-    setLookupHit(false)
+    setAddressOptions([])
+    setSelectedAddressIdx('')
     setLookupError(null)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.country])
@@ -129,7 +135,8 @@ export default function LandingForm() {
     return Object.keys(next).length === 0
   }
 
-  // UK postcode lookup against postcodes.io (free, no key, unlimited).
+  // UK postcode lookup via our server-side proxy to getAddress.io.
+  // Returns a list of addresses inside the postcode for the user to pick from.
   const lookupPostcode = async () => {
     const raw = data.postcode.trim().toUpperCase().replace(/\s+/g, '')
     if (!raw) {
@@ -138,31 +145,34 @@ export default function LandingForm() {
     }
     setLookupBusy(true)
     setLookupError(null)
-    setLookupHit(false)
+    setAddressOptions([])
+    setSelectedAddressIdx('')
 
     lookupAbort.current?.abort()
     const ctrl = new AbortController()
     lookupAbort.current = ctrl
 
     try {
-      const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(raw)}`, {
+      const res = await fetch(`/api/postcode-lookup?postcode=${encodeURIComponent(raw)}`, {
         signal: ctrl.signal,
       })
-      if (!res.ok) {
+      if (res.status === 404) {
         setLookupError(
           'We could not find that postcode. Please check it or enter your address by hand.'
         )
         return
       }
-      const json: { result: PostcodeLookup } = await res.json()
-      const r = json.result
-      setData((prev) => ({
-        ...prev,
-        postcode: r.postcode,
-        city: prev.city || r.admin_district || r.parish || '',
-        county: prev.county || r.admin_county || r.region || '',
-      }))
-      setLookupHit(true)
+      if (!res.ok) {
+        setLookupError('Lookup is unavailable just now. Please enter your address by hand.')
+        return
+      }
+      const json: PostcodeLookupResponse = await res.json()
+      if (!json.addresses || json.addresses.length === 0) {
+        setLookupError('No addresses found for that postcode. Please enter yours by hand.')
+        return
+      }
+      setData((prev) => ({ ...prev, postcode: json.postcode }))
+      setAddressOptions(json.addresses)
     } catch (err) {
       if ((err as Error).name !== 'AbortError') {
         setLookupError('Lookup did not respond. Please enter your address by hand.')
@@ -170,6 +180,31 @@ export default function LandingForm() {
     } finally {
       setLookupBusy(false)
     }
+  }
+
+  // When the user picks an address from the dropdown, fill the address fields.
+  const pickAddress = (idxStr: string) => {
+    if (idxStr === '') {
+      setSelectedAddressIdx('')
+      return
+    }
+    const idx = Number(idxStr)
+    const a = addressOptions[idx]
+    if (!a) return
+    setSelectedAddressIdx(idx)
+    setData((prev) => ({
+      ...prev,
+      addressLine1: a.line1,
+      addressLine2: a.line2,
+      city: a.city,
+      county: a.county,
+    }))
+    setErrors((prev) => {
+      const next = { ...prev }
+      delete next.addressLine1
+      delete next.city
+      return next
+    })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -381,10 +416,38 @@ export default function LandingForm() {
                     {lookupError}
                   </p>
                 )}
-                {lookupHit && (
-                  <p className="caption-serif text-warm-grey">
-                    We found that postcode. Please fill in the street details below.
-                  </p>
+                {addressOptions.length > 0 && (
+                  <div className="space-y-1">
+                    <label
+                      htmlFor="address-pick"
+                      className="block text-small font-medium text-charcoal"
+                    >
+                      Pick your address
+                    </label>
+                    <select
+                      id="address-pick"
+                      value={selectedAddressIdx === '' ? '' : String(selectedAddressIdx)}
+                      onChange={(e) => pickAddress(e.target.value)}
+                      className={cn(
+                        'w-full min-h-[44px] rounded-lg border border-border-subtle bg-background px-4 py-3 text-body text-charcoal',
+                        'shadow-elev-inset focus:shadow-elev-inset-focus focus:border-navy focus:outline-none',
+                        'transition-[box-shadow,border-color] duration-200'
+                      )}
+                    >
+                      <option value="">
+                        {addressOptions.length} address
+                        {addressOptions.length === 1 ? '' : 'es'} found, choose one
+                      </option>
+                      {addressOptions.map((a, i) => (
+                        <option key={i} value={i}>
+                          {a.label}
+                        </option>
+                      ))}
+                    </select>
+                    <p className="caption-serif text-warm-grey">
+                      Picking one fills the address fields below. You can still tweak them.
+                    </p>
+                  </div>
                 )}
                 <Input
                   label="Address line 1"
